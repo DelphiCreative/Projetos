@@ -1,0 +1,789 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  Caption = 'FMX.Fast!!!'
+  ClientHeight = 517
+  ClientWidth = 386
+  Position = DesktopCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnKeyUp = FormKeyUp
+  DesignerMasterStyle = 3
+  object Rectangle3: TRectangle
+    Align = Client
+    Fill.Color = claWhite
+    Size.Width = 386.000000000000000000
+    Size.Height = 517.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Color = claWhite
+    Stroke.Thickness = 0.000000000000000000
+    object TabControl: TTabControl
+      Align = Client
+      Size.Width = 386.000000000000000000
+      Size.Height = 517.000000000000000000
+      Size.PlatformDefault = False
+      TabHeight = 49.000000000000000000
+      TabIndex = 0
+      TabOrder = 0
+      TabPosition = PlatformDefault
+      Sizes = (
+        386s
+        468s
+        386s
+        468s)
+      object TabHome: TTabItem
+        CustomIcon = <
+          item
+          end>
+        IsSelected = True
+        Size.Width = 193.000000000000000000
+        Size.Height = 49.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = ''
+        TabOrder = 0
+        Text = 'Home'
+        ExplicitSize.cx = 193.000000000000000000
+        ExplicitSize.cy = 49.000000000000000000
+        object ToolBar1: TToolBar
+          Size.Width = 386.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          object BarraTitulo: TRectangle
+            Align = Client
+            Fill.Color = claCornflowerblue
+            Size.Width = 386.000000000000000000
+            Size.Height = 48.000000000000000000
+            Size.PlatformDefault = False
+            Stroke.Thickness = 0.000000000000000000
+            object BotaoMenu: TSpeedButton
+              Align = Left
+              IconTintColor = claWhite
+              Size.Width = 48.000000000000000000
+              Size.Height = 48.000000000000000000
+              Size.PlatformDefault = False
+              object IconeMenu: TImage
+                MultiResBitmap.Height = 36
+                MultiResBitmap.Width = 36
+                MultiResBitmap = <
+                  item
+                    Width = 36
+                    Height = 36
+                    PNG = {
+                      89504E470D0A1A0A0000000D4948445200000024000000240806000000E10098
+                      98000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                      0050494441545847EDD4B10A0020080051EDCBFB738B908610DC22ECDEA25B42
+                      7002E037EA7331B3EEEB55AABADF3D0F325FAF9A07ED3B9ACF673CF765403984
+                      314218338411A511C60861CC1046E0632203E6BF241070883C50000000004945
+                      4E44AE426082}
+                    FileName = 'C:\Users\diego\Downloads\icons8-card'#225'pio-36.png'
+                  end>
+                Align = Center
+                HitTest = False
+                Size.Width = 24.000000000000000000
+                Size.Height = 24.000000000000000000
+                Size.PlatformDefault = False
+              end
+            end
+            object Label10: TLabel
+              Align = Client
+              StyledSettings = [Family, Style]
+              Size.Width = 338.000000000000000000
+              Size.Height = 48.000000000000000000
+              Size.PlatformDefault = False
+              TextSettings.Font.Size = 18.000000000000000000
+              TextSettings.FontColor = claWhite
+              Text = 'FMX.FAST - MOBILE E DESKTOP'
+              TabOrder = 0
+            end
+          end
+          object ShadowEffect1: TShadowEffect
+            Distance = 3.000000000000000000
+            Direction = 45.000000000000000000
+            Softness = 0.300000011920929000
+            Opacity = 0.300000011920929000
+            ShadowColor = claBlack
+          end
+        end
+        object Memo1: TMemo
+          Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+          DataDetectorTypes = []
+          StyledSettings = [Family, Style, FontColor]
+          TextSettings.Font.Size = 8.000000000000000000
+          Position.X = 72.000000000000000000
+          Position.Y = 111.000000000000000000
+          Size.Width = 281.000000000000000000
+          Size.Height = 290.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          Visible = False
+          Viewport.Width = 273.000000000000000000
+          Viewport.Height = 282.000000000000000000
+        end
+        object Label11: TLabel
+          StyledSettings = [Family, Style]
+          Margins.Left = 30.000000000000000000
+          Margins.Top = 30.000000000000000000
+          Margins.Right = 30.000000000000000000
+          Position.X = 30.000000000000000000
+          Position.Y = 78.000000000000000000
+          Size.Width = 326.000000000000000000
+          Size.Height = 235.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 30.000000000000000000
+          TextSettings.FontColor = claCornflowerblue
+          TextSettings.HorzAlign = Center
+          Text = 'FMX.Fast a unit desenvolvimento mais r'#225'pida da atualidade'
+          TabOrder = 3
+        end
+        object Menu: TMultiView
+          MasterButton = BotaoMenu
+          Mode = Drawer
+          Size.Width = 250.000000000000000000
+          Size.Height = 420.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          object MenuFundo: TRectangle
+            Align = Client
+            Fill.Color = claWhite
+            Size.Width = 250.000000000000000000
+            Size.Height = 420.000000000000000000
+            Size.PlatformDefault = False
+            Stroke.Color = claWhite
+            object MenuScroll: TVertScrollBox
+              Align = Client
+              Size.Width = 250.000000000000000000
+              Size.Height = 420.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 0
+              Viewport.Width = 245.000000000000000000
+              Viewport.Height = 420.000000000000000000
+              object MenuCadastro: TRectangle
+                Align = Top
+                ClipChildren = True
+                Fill.Color = claNull
+                Size.Width = 245.000000000000000000
+                Size.Height = 225.000000000000000000
+                Size.PlatformDefault = False
+                Stroke.Color = claNull
+                object BotaoCadastro: TSpeedButton
+                  Align = Top
+                  Padding.Left = 15.000000000000000000
+                  Size.Width = 245.000000000000000000
+                  Size.Height = 48.000000000000000000
+                  Size.PlatformDefault = False
+                  OnClick = BotaoCadastroClick
+                  object Label1: TLabel
+                    Align = Client
+                    StyledSettings = [Family]
+                    Margins.Top = 5.000000000000000000
+                    Margins.Right = 10.000000000000000000
+                    Margins.Bottom = 5.000000000000000000
+                    Size.Width = 220.000000000000000000
+                    Size.Height = 38.000000000000000000
+                    Size.PlatformDefault = False
+                    TextSettings.Font.StyleExt = {00070000000000000004000000}
+                    Text = 'CADASTROS'
+                    TabOrder = 0
+                    object Line2: TLine
+                      Align = Bottom
+                      LineType = Bottom
+                      Position.Y = 37.000000000000000000
+                      Size.Width = 220.000000000000000000
+                      Size.Height = 1.000000000000000000
+                      Size.PlatformDefault = False
+                    end
+                  end
+                end
+                object BotaoClientes: TSpeedButton
+                  Align = Top
+                  Padding.Left = 15.000000000000000000
+                  Position.Y = 48.000000000000000000
+                  Size.Width = 245.000000000000000000
+                  Size.Height = 48.000000000000000000
+                  Size.PlatformDefault = False
+                  OnClick = BotaoClientesClick
+                  object Rectangle2: TRectangle
+                    Align = Left
+                    Fill.Bitmap.Bitmap.PNG = {
+                      89504E470D0A1A0A0000000D4948445200000024000000240806000000E10098
+                      98000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                      02BA494441545847EDD64DC84D5B1CC7F187EBFDB590C8CBC044B826841B0326
+                      2466868A9022313060E20E28A5C4BDE1D64DCA90920C884C948401299494E435
+                      1103EFEFAFDFEF7EC93A6BAFE79CE73C9E67E4FCEAD3DE7B9D7DD6D967EDB5FE
+                      7BB7B5D24A2BDD9C1EC5B63BF327666124FEC70B74690616DB3093B01DA7701E
+                      136166E31DBE17CE603E7E29BDB10EFE50D9F906945989AF287F5477B10D0330
+                      17F1E76BD1A98CC255849DE933CEE12FF4C765C4E7E8349C16FF056DF2B6F543
+                      53F903EDFD50E92D9C233382B6D8424C8DDA34074D6529E24E528EC0A446527B
+                      E028BD09DAB40895F42CB6A924BF9088E7D9CF85ECA89AD1F0029E67473F73AF
+                      D8D6A4DE058D2DB68DE2AA1B8147D95135CFE0080DCD8E7E6658B1AD49BD0B6A
+                      A65E7C409F7CB71247C6F9184EE26FB89DEFD6A6DE055D2BB68DF200AF303E3B
+                      AA66385CF61FB3A33CFFE049BE5B9B7A1734B9D836CA18F4C2D3ECA81A8BA52B
+                      71507694978C7DF96E35F52E289E84EDC55BEB08C473C41CC509ACCF8EF21C82
+                      A3DA74A6C13A132ED5942DF08FDD0ADA4A3E26A6C03953B6ED45A7B30BE10FC4
+                      EEC315B431682B59C9CD4184ED2FE1A3C80ADF74ACB05F107618DA0AE78F1334
+                      FEEC248C4FF84F883FB71CF8401E82A6721871677A0F1F9EAB83B69073701ECC
+                      38ECC06BC4E73DC44C7438FB1177223B37FF22F579C95BB704D622ABF671C4E7
+                      3C466A5154E27DBE84B803792B9DF8CEA1C5388BD479A59BF055C40B3B50B485
+                      7C8D6937CE8BE548AD9C90B7CD9A3201C637C38B489D2BCBC332F88E75A3682B
+                      FD8D4AFCB7AB7007E1C98D385AD61C97B87DEC44EA3CF9D4B77A5B50A7171C69
+                      2FB22683E1CA4875D2513E1E36C3D42B192BD030C790FA7267F88ADA17BE01A4
+                      3E5F83641C5EE3905DC977BB24D6185F5F7C7E790161ACDA16C7BAD984F85FFC
+                      AAA66A4B9972845C72BBF3DD2E89957901AE6747ADB4F2FBA6ADED0746DA5E27
+                      1D27BD5D0000000049454E44AE426082}
+                    Fill.Bitmap.WrapMode = TileStretch
+                    Fill.Kind = Bitmap
+                    Margins.Top = 10.000000000000000000
+                    Margins.Right = 10.000000000000000000
+                    Margins.Bottom = 10.000000000000000000
+                    Position.X = 15.000000000000000000
+                    Position.Y = 10.000000000000000000
+                    Size.Width = 28.000000000000000000
+                    Size.Height = 28.000000000000000000
+                    Size.PlatformDefault = False
+                    Stroke.Thickness = 0.000000000000000000
+                  end
+                  object Label2: TLabel
+                    Align = Client
+                    StyledSettings = [Family]
+                    Margins.Top = 10.000000000000000000
+                    Margins.Right = 10.000000000000000000
+                    Margins.Bottom = 10.000000000000000000
+                    Size.Width = 182.000000000000000000
+                    Size.Height = 28.000000000000000000
+                    Size.PlatformDefault = False
+                    Text = 'Clientes'
+                    TabOrder = 0
+                    object Line1: TLine
+                      Align = Bottom
+                      LineType = Bottom
+                      Position.Y = 27.000000000000000000
+                      Size.Width = 182.000000000000000000
+                      Size.Height = 1.000000000000000000
+                      Size.PlatformDefault = False
+                    end
+                  end
+                end
+                object BotaoFornecedores: TSpeedButton
+                  Align = Top
+                  Padding.Left = 15.000000000000000000
+                  Position.Y = 96.000000000000000000
+                  Size.Width = 245.000000000000000000
+                  Size.Height = 48.000000000000000000
+                  Size.PlatformDefault = False
+                  OnClick = BotaoClientesClick
+                  object Rectangle4: TRectangle
+                    Align = Left
+                    Fill.Bitmap.Bitmap.PNG = {
+                      89504E470D0A1A0A0000000D4948445200000024000000240806000000E10098
+                      98000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                      01BD494441545847EDD6CD2B05511CC6F1CB8252A22C14529250AC644D76CA5F
+                      60CF92FC038A94959595B2534AA4C4968585A585C4DEC24B5928919297EFE3CE
+                      ADB9D3EFCECB695E284F7D3A33775ECEEFCE3D73EE29FDE7AFA5CE6B5DD38A51
+                      B4FFEC954AE7B82A6FE69B211CE21D5F017B68466E99C40B8285F89D61012DC8
+                      34DD78825584E51AFA5933CB3AAC8EC3AC21B3DCC1EA34CC2D324907AC0EE388
+                      3D96EABD364EDABCD6259D5E1B9924053D7BAD4B5EBD36D56812751943F7883D
+                      01277942BAB9CB2C7C095D9B7ABAE0FFE649C41E4349D2088D05ABC3309AD51B
+                      9049E6F106AB638BCE9D43A6D986D5B9650B9967041FB00AF0D3395A9AE49265
+                      5845F82D21B7685E39805588E898D3E22FC93CE48F3AD58467E50647D039B966
+                      13FEA722A76842EEE9C52382054D21D7F46115B596B07A0395413CC03A27CC2E
+                      22A305BDDE980B5837F1AB143403EB78944FD4CC388E615D584BA5A059048FE9
+                      5EFABC4233B8963455E7D57ACB167182899FBD82338DAAAA13087B42B1049F90
+                      F657CA9BC52458D0307ACA9BC5245850BFD71696E0FF8D0A1A2B6F3A651F9A30
+                      358636F4C16F496A833AADE8E62E71BD2E3203D06AA0EADB4760962EED7C0347
+                      EB3D344E59279E0000000049454E44AE426082}
+                    Fill.Bitmap.WrapMode = TileStretch
+                    Fill.Kind = Bitmap
+                    Margins.Top = 10.000000000000000000
+                    Margins.Right = 10.000000000000000000
+                    Margins.Bottom = 10.000000000000000000
+                    Position.X = 15.000000000000000000
+                    Position.Y = 10.000000000000000000
+                    Size.Width = 28.000000000000000000
+                    Size.Height = 28.000000000000000000
+                    Size.PlatformDefault = False
+                    Stroke.Thickness = 0.000000000000000000
+                  end
+                  object Label3: TLabel
+                    Align = Client
+                    StyledSettings = [Family]
+                    Margins.Top = 10.000000000000000000
+                    Margins.Right = 10.000000000000000000
+                    Margins.Bottom = 10.000000000000000000
+                    Size.Width = 182.000000000000000000
+                    Size.Height = 28.000000000000000000
+                    Size.PlatformDefault = False
+                    Text = 'Fornecedores'
+                    TabOrder = 0
+                    object Line3: TLine
+                      Align = Bottom
+                      LineType = Bottom
+                      Position.Y = 27.000000000000000000
+                      Size.Width = 182.000000000000000000
+                      Size.Height = 1.000000000000000000
+                      Size.PlatformDefault = False
+                    end
+                  end
+                end
+                object BotaoCategoria: TSpeedButton
+                  Align = Top
+                  Padding.Left = 15.000000000000000000
+                  Position.Y = 144.000000000000000000
+                  Size.Width = 245.000000000000000000
+                  Size.Height = 48.000000000000000000
+                  Size.PlatformDefault = False
+                  OnClick = BotaoClientesClick
+                  object Rectangle8: TRectangle
+                    Align = Left
+                    Fill.Bitmap.Bitmap.PNG = {
+                      89504E470D0A1A0A0000000D49484452000000300000003008060000005702F9
+                      87000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                      02CE494441546843ED9A4BE84C511CC7AF47445142220B52A288BCB250EC48D9
+                      4B364A924742CA566265231B2CE49114A1AC6C6C642361E15948C8CAAB24F2F6
+                      F99E3377E6389D997B67FEE7CE9CA9F9D4A739E7CECCBF73EEB9BFDFFCEEB9FF
+                      ACDF19517B6D9731A8EFFE36BD3E6134EEC717F8B7E67DDC84C33069C6E24DCC
+                      07EE7B06939EC4710C0DDC750726C944FC89A141BBBEC62457612D86061C7206
+                      7695E1B5D75628E39445B1921CF33174B67DBF61921310F7303468D7B3982C4B
+                      F02B86062EDFE2544C9AE5F814FDC1DFC299D813DA4D7B237125CE439511B7F1
+                      0E0EE894562B300AD7A12E9DF13A10115D7A77F1145652102EC2E7E85FEFB1DD
+                      854322B402B350D7F504D3AB96D3A86A56E857FC20AAEA6D86B2DD3EFC657A4D
+                      B888A1B315DB2FB802733660E873AE3F700AD6F1574065C3276C75165A711E75
+                      568BD0197C801F4CCFA2B12CC371A617E6153EB3CD30BA7C42332FEB52EC2A7E
+                      31A7CCE3F2199FD86629FED45EBB4651357A030FDB669A144D409745D294B91F
+                      E8944BF831B28FF1BF1FD52A2750C5EAE5C9A2297331FF90BC8C1BBD63AD5C8C
+                      5DA5CA15E80A8309F41ABF94500C28D273AEE0553C677AC5E8D65365B2988C0B
+                      6C331A85A5C46C748352A93014C4FA434A6BFE7137881FA1FFFE502D2CE6544A
+                      BCC469A697657BF01DFA2BB017B55A9B4DAF81BB02DB70956D46A35439AD811D
+                      C59DA82DF4D00AECC613DE3199441A55F1A63BA56398FCFEFF208DF69AD03DB1
+                      8F62C00F6205F71CDC627A0DDC205E83B1835809E6242ADE4AD3691057B5AB91
+                      674843952BB010758F1B133D44B96E9BE5E9BB34DA570C26D06BCA04F17ABC60
+                      9B75B6A31E3D6D35BD063AF6D036B343B8DA36A3F106359EEFA65712651B9514
+                      79A06AEF479BBF1ABC1BC07A46E6EEE8E9D981FB7E0CB54F3509EB945901A1B4
+                      A98D570DFE001E413D3FBE86DA7ED7E0F519FDC8E4A8B29D6E9BD1788F9A4447
+                      E8E94CE89F43B49FAAF706B44F96FD030E62769B3C1CB5890000000049454E44
+                      AE426082}
+                    Fill.Bitmap.WrapMode = TileStretch
+                    Fill.Kind = Bitmap
+                    Margins.Top = 10.000000000000000000
+                    Margins.Right = 10.000000000000000000
+                    Margins.Bottom = 10.000000000000000000
+                    Position.X = 15.000000000000000000
+                    Position.Y = 10.000000000000000000
+                    Size.Width = 28.000000000000000000
+                    Size.Height = 28.000000000000000000
+                    Size.PlatformDefault = False
+                    Stroke.Thickness = 0.000000000000000000
+                  end
+                  object Label4: TLabel
+                    Align = Client
+                    StyledSettings = [Family]
+                    Margins.Top = 10.000000000000000000
+                    Margins.Right = 10.000000000000000000
+                    Margins.Bottom = 10.000000000000000000
+                    Size.Width = 182.000000000000000000
+                    Size.Height = 28.000000000000000000
+                    Size.PlatformDefault = False
+                    Text = 'Categorias'
+                    TabOrder = 0
+                    object Line7: TLine
+                      Align = Bottom
+                      LineType = Bottom
+                      Position.Y = 27.000000000000000000
+                      Size.Width = 182.000000000000000000
+                      Size.Height = 1.000000000000000000
+                      Size.PlatformDefault = False
+                    end
+                  end
+                end
+              end
+              object MenuLiquidar: TRectangle
+                Align = Top
+                ClipChildren = True
+                Fill.Color = claNull
+                Position.Y = 408.000000000000000000
+                Size.Width = 245.000000000000000000
+                Size.Height = 183.000000000000000000
+                Size.PlatformDefault = False
+                Stroke.Color = claNull
+                object BotaoLiquidar: TSpeedButton
+                  Align = Top
+                  Padding.Left = 15.000000000000000000
+                  Size.Width = 245.000000000000000000
+                  Size.Height = 48.000000000000000000
+                  Size.PlatformDefault = False
+                  OnClick = BotaoCadastroClick
+                  object LabelLiquidarContas: TLabel
+                    Align = Client
+                    StyledSettings = [Family]
+                    Margins.Top = 5.000000000000000000
+                    Margins.Right = 10.000000000000000000
+                    Margins.Bottom = 5.000000000000000000
+                    Size.Width = 220.000000000000000000
+                    Size.Height = 38.000000000000000000
+                    Size.PlatformDefault = False
+                    TextSettings.Font.StyleExt = {00070000000000000004000000}
+                    Text = 'LIQUIDAR CONTAS'
+                    TabOrder = 0
+                    object Line4: TLine
+                      Align = Bottom
+                      LineType = Bottom
+                      Position.Y = 37.000000000000000000
+                      Size.Width = 220.000000000000000000
+                      Size.Height = 1.000000000000000000
+                      Size.PlatformDefault = False
+                    end
+                  end
+                end
+                object BotaoRecebimento: TSpeedButton
+                  Align = Top
+                  Padding.Left = 15.000000000000000000
+                  Position.Y = 48.000000000000000000
+                  Size.Width = 245.000000000000000000
+                  Size.Height = 48.000000000000000000
+                  Size.PlatformDefault = False
+                  OnClick = BotaoClientesClick
+                  object Rectangle6: TRectangle
+                    Align = Left
+                    Fill.Bitmap.Bitmap.PNG = {
+                      89504E470D0A1A0A0000000D4948445200000024000000240806000000E10098
+                      98000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                      03A8494441545847BDD75BA854551CC7F1F1AEA90F86688694608954A696A0E2
+                      8326825888926F82685EB2C8472D109314C44CCA7A484B480A94024593525114
+                      C4874AC11B9848189889A685199969A6F5FDEED94B96FBAC7166CE99F1071FCE
+                      EC3D97FDDFEBB6D72991B7F05F64062AE559FC8EF8F3B133E88EE7711DBBD115
+                      75272EEA514F24D20D3F222E20E5359850D42EB4A9A88FD0CE1385CC43F1E229
+                      5B10320916B5035D3C516F42516B512C6A2B8A174FD98938A1A8AFD0D913F5A6
+                      5251DFA278F1949528E625F8DE7634ACA82F115FB892A1286608C2FBB67427D4
+                      94F6F0CBA658D4CCFCF85E3E442AAF22FE9CE3AC236ACA284C2BBFBCAB28EF6A
+                      5F7E9CB2179566D326143FFF056A8E77FA62F9E55D453D80F7F0677E4EE7B010
+                      E18E5D3666E1A9ECA89C75089FD72DCC46CDE9859F31253B6AD97DB6845DFB38
+                      ECE690871016CE9B781A660CE262E6A0EE4CC70D3C971DA5077A3113112EACB0
+                      48FA790B6D7531212EFDAECE7695A956544FF8F8F0337F6130CC9B6873316620
+                      AEE1EDECA89C6A45D9DD76F523D951A9B4040D292664311C0FC3B2A372DE8045
+                      AD473C868A791DB7F14A76D4A0B8B29EC077F9EB30B5434B3923434B85AE350D
+                      6F9938CE127FFCDF9C03DE84A22CF6FBFCF529B81A37AD98908FE105655161DF
+                      14BA2F6637B93A37350ED65F102EFA1BFAC1849652D35B268E5DE545DD4AF4F7
+                      44145BEABEB44C3123F3BFA90CCFFFB63A95A6EC8308FB9671F0C1E933EB1BF8
+                      C8A8F4A43E9AFF350FC325C307F2495CC021B8A68D404DE9806DB0E97D6C6C86
+                      2DF209C218D1318C46A538E0E307708A33D321D062C3E686EA53AC864DEEEBF8
+                      8BFF6019A6E27C7E4E0E5E17465B338E63C81B8A7FE35EFCCDA5E88B2CA711DE
+                      74455E0E2F6E17C55F3C02BBCFBDCD616C849F7D013E26DCC0ED41FC9D7AB8EF
+                      FE00A53FF21331BB642C3644E77415CEAEB9B01BF7236EB5B6F289505A149D88
+                      39865CFE27C3BD91E72CE29DFC7533CC77103B73AE6002E259E77BE3F1185CE8
+                      7C5ED98DCFE4E71A9D5FE17F2777E2543C8E54E57FC3961C04675DBC62C77CA4
+                      FC80CFE1E62CEC8D6AE1C469B19F7123EFDAA1D4FF4FF6F167F8097ED71F0A71
+                      6DB2851D63CE5C1FC8614F542D0E68F7E297B2A3449EC44114EFA2595C3EAAC6
+                      BB7D19CEACD48F348A6BD613A8398E9B0348FD583D2E6215DE85DBE270FE6BD4
+                      1D5B6B01AA3D0E522EC331D90321DEA4B3DBF75D6C5B9D01A87535B6AB57C07D
+                      542A2E2BF13EBDD57176F95FA7779E2AC419F33EFAE0BEA637D6E02C5CA75C12
+                      DC3916376E75A454FA1FBE86FC84333C0C880000000049454E44AE426082}
+                    Fill.Bitmap.WrapMode = TileStretch
+                    Fill.Kind = Bitmap
+                    Margins.Top = 10.000000000000000000
+                    Margins.Right = 10.000000000000000000
+                    Margins.Bottom = 10.000000000000000000
+                    Position.X = 15.000000000000000000
+                    Position.Y = 10.000000000000000000
+                    Size.Width = 28.000000000000000000
+                    Size.Height = 28.000000000000000000
+                    Size.PlatformDefault = False
+                    Stroke.Thickness = 0.000000000000000000
+                  end
+                  object Label5: TLabel
+                    Align = Client
+                    StyledSettings = [Family]
+                    Margins.Top = 10.000000000000000000
+                    Margins.Right = 10.000000000000000000
+                    Margins.Bottom = 10.000000000000000000
+                    Size.Width = 182.000000000000000000
+                    Size.Height = 28.000000000000000000
+                    Size.PlatformDefault = False
+                    Text = 'Recebimento'
+                    TabOrder = 0
+                    object Line5: TLine
+                      Align = Bottom
+                      LineType = Bottom
+                      Position.Y = 27.000000000000000000
+                      Size.Width = 182.000000000000000000
+                      Size.Height = 1.000000000000000000
+                      Size.PlatformDefault = False
+                    end
+                  end
+                end
+                object BotaoPagamento: TSpeedButton
+                  Align = Top
+                  Padding.Left = 15.000000000000000000
+                  Position.Y = 96.000000000000000000
+                  Size.Width = 245.000000000000000000
+                  Size.Height = 48.000000000000000000
+                  Size.PlatformDefault = False
+                  OnClick = BotaoClientesClick
+                  object Rectangle7: TRectangle
+                    Align = Left
+                    Fill.Bitmap.Bitmap.PNG = {
+                      89504E470D0A1A0A0000000D4948445200000024000000240806000000E10098
+                      98000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                      0223494441545847ED98C14B16411887474B50844AC942BC64508278F22C5EAA
+                      6B549704ED4FA8A89397FE85F4E259B122EAA2F73A4947C18BA70A9428A414EB
+                      126525F9FC66BE0959BF6F767677FC10F281879D99EFDBE1DD9D77DF59D61C93
+                      434BED98C718DEC773B6579C2F388D2F6CAF2203F807FF56F4376AAE20ADB563
+                      88613CE19A9538899A2B484C402982F1E4CE151350538949EA097C8257F19B06
+                      4A70065FE31D7CAA812A282025E559DB2B87CED51C9A2BC8915BB2FF36A0EF38
+                      892BB617A04852F7E0960632B463876B56E227FE70CD307949FD007D35AEE263
+                      4C728714909D0C9EE1926B463184775DD34CE143D70C137B87DEE0250D64D045
+                      F761BD2AAD8B547DDA417B5129937A04DFB9E63F7407DEE347FC84A3B89F4D54
+                      C1DDB03D48FD942980E7E837D119BCE89AE63CCEBAA6E947FD2F1B60F280AEA3
+                      DE9D6ED99E31976B47CF05D453790DF5BF712C4C6C0E093DFE37B1D3F68C9943
+                      FDE655BE08BD8ADCC02EDB33661D93E7903650D59105542114F750CBB68AF3E8
+                      EF885EF816F12B9EC24271C4DEA15DBCA281020CA22E42E71F4A1D5AC635D78C
+                      4289EE13DBD6A1144BF601951B52EF4BCA8B587FA13FF72D4691B7644949FDD8
+                      37E234BEC2DC1C6B56406DA88ADC6B7B019A1550344502D23EB55DD2EC1E5709
+                      9FD429D45C41AA2ED923D4BEB45F8D9526262055E046D4AB2DDDD888D05CD1E8
+                      03813E14D45B82226A8EECEE7F8098AD43DC467D8E51A92FC367D4E79897B677
+                      4C698CD9034190B20F9D88C8CE0000000049454E44AE426082}
+                    Fill.Bitmap.WrapMode = TileStretch
+                    Fill.Kind = Bitmap
+                    Margins.Top = 10.000000000000000000
+                    Margins.Right = 10.000000000000000000
+                    Margins.Bottom = 10.000000000000000000
+                    Position.X = 15.000000000000000000
+                    Position.Y = 10.000000000000000000
+                    Size.Width = 28.000000000000000000
+                    Size.Height = 28.000000000000000000
+                    Size.PlatformDefault = False
+                    Stroke.Thickness = 0.000000000000000000
+                  end
+                  object Label6: TLabel
+                    Align = Client
+                    StyledSettings = [Family]
+                    Margins.Top = 10.000000000000000000
+                    Margins.Right = 10.000000000000000000
+                    Margins.Bottom = 10.000000000000000000
+                    Size.Width = 182.000000000000000000
+                    Size.Height = 28.000000000000000000
+                    Size.PlatformDefault = False
+                    Text = 'Pagamento'
+                    TabOrder = 0
+                    object Line6: TLine
+                      Align = Bottom
+                      LineType = Bottom
+                      Position.Y = 27.000000000000000000
+                      Size.Width = 182.000000000000000000
+                      Size.Height = 1.000000000000000000
+                      Size.PlatformDefault = False
+                    end
+                  end
+                end
+              end
+              object MenuLancamento: TRectangle
+                Align = Top
+                ClipChildren = True
+                Fill.Color = claNull
+                Position.Y = 225.000000000000000000
+                Size.Width = 245.000000000000000000
+                Size.Height = 183.000000000000000000
+                Size.PlatformDefault = False
+                Stroke.Color = claNull
+                object BotaoLancamento: TSpeedButton
+                  Align = Top
+                  Padding.Left = 15.000000000000000000
+                  Size.Width = 245.000000000000000000
+                  Size.Height = 48.000000000000000000
+                  Size.PlatformDefault = False
+                  OnClick = BotaoCadastroClick
+                  object Label7: TLabel
+                    Align = Client
+                    StyledSettings = [Family]
+                    Margins.Top = 5.000000000000000000
+                    Margins.Right = 10.000000000000000000
+                    Margins.Bottom = 5.000000000000000000
+                    Size.Width = 220.000000000000000000
+                    Size.Height = 38.000000000000000000
+                    Size.PlatformDefault = False
+                    TextSettings.Font.StyleExt = {00070000000000000004000000}
+                    Text = 'LAN'#199'AMENTO FINANCEIRO'
+                    TabOrder = 0
+                    object Line8: TLine
+                      Align = Bottom
+                      LineType = Bottom
+                      Position.Y = 37.000000000000000000
+                      Size.Width = 220.000000000000000000
+                      Size.Height = 1.000000000000000000
+                      Size.PlatformDefault = False
+                    end
+                  end
+                end
+                object BotaoReceita: TSpeedButton
+                  Align = Top
+                  Padding.Left = 15.000000000000000000
+                  Position.Y = 96.000000000000000000
+                  Size.Width = 245.000000000000000000
+                  Size.Height = 48.000000000000000000
+                  Size.PlatformDefault = False
+                  OnClick = BotaoClientesClick
+                  object Rectangle10: TRectangle
+                    Align = Left
+                    Fill.Bitmap.Bitmap.PNG = {
+                      89504E470D0A1A0A0000000D4948445200000024000000240806000000E10098
+                      98000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                      0398494441545847CD985BC8164518807F5333CD123B8119968A8152682711F5
+                      C622CD40CC42CD3B51AFBCD13CDE78E1A5A91428864228A611442858784603C1
+                      40231032A5883C229A8752F050E6DFF37CFB0D8CEB7CEDEEF7A9F4C0C3EECEB7
+                      FFEE3BB333EFCCFC6DFF373AD48F65E88D43F005EC895771295EC7FB46579C89
+                      3F607BC26DF830DE17C6E2714C0512FB37FE849FE228BC277C80FF602A8022BF
+                      C5BE78D7781F6F61EA6565BD88AF62CB3C87D730F592AA9EC33ED812F683D4C3
+                      9B753336CDE3F817A61EDCC83358F4798763691EA81FC511D2393B2DC56F380C
+                      D7D5AE1A33BD7EACCC2A4CD530AF2DF2399A1CA50B6EC1D4BDFA2736C5D7987A
+                      60D0CC6C202F631E33FE42F49ED4DF3E8A95D98FE10137F157DC8E8BF14DEC8E
+                      45F442A793B31807D40F2B7318C303BEB2A005DEC138A054AB26893B753CD13A
+                      15B4C291FA31507A128F038A395A3F76C325E8E73B898EA878329D887BF147FC
+                      0CFBA378BF29A4328D020A2DB406E7E277B80307E02318188F8EBA03381ABDCF
+                      BE661FFC059BE6190C53C61FE8B2435EC7A1D9692176E845D8B176D5D6B61243
+                      1F9A65411566A3B57AAC76753B6670D74326C2411644D8C24E0FBFE3380B127C
+                      8307B3D362C227B37617D0593A8FD9F82574E27DDB8288A7D011F5044EB120C1
+                      CFE8F32B617AB72F8CA85DDDCE43F84ADD909D630CD6DF5CE2E6B13F994E76D6
+                      AE2AF0207E8FA6F905E8E86A953178086F60AAA28558FB2FD096721DDD2A8E40
+                      D3822D589A54C2DA8D06E76708ACC649D9691247929D5FFCC423B3D34A9C40FB
+                      DB1DBC8BBEE08DDA55C6471886704AE7AEC0B398BAA748DF916CA14E68E6BD84
+                      2EAEBCD9E06CB946ACC5B0EEB13FBE989D56C24A9D6A34C7BC874EB05371BD05
+                      60FF720390C755E36B781A07E3F3784F70D165D60E4B075BCE4C6C00B69A99FD
+                      4B8C17F2459FB68C0D3199596B87EE931644F44003CC1302DA850E8C583BBD2D
+                      6905F2BF4D46678AFF0C485CC75C41FB94136B0AFBCC8AECB41690A3253F693F
+                      8D56CC17DAB2D330CF3C2C0C48CC236EA94D70CBEBD7B690BBD319E852C55DAE
+                      18D0B1ECB496185D16DBA7DC5ED96927E046F41F14CE9B1FE2276805DC2D970A
+                      489CAB96A1ADE51FC5EEC39089E380CC5DFE6ED07B702B8ACB61CBFD4FCA65B4
+                      A256B052400117EB6FA143DC2C9CDFC3C70179AFAD645F9B83B6E226B4B54D80
+                      6EB906A281495301156140E731CEF2E21A693EBA91307DE417FD2EFA36607BE9
+                      B56E490CC89ADA5F3EB6A0248E3E73DF5DC7806CF6266D6BFF1726B46A21677B
+                      13B30000000049454E44AE426082}
+                    Fill.Bitmap.WrapMode = TileStretch
+                    Fill.Kind = Bitmap
+                    Margins.Top = 10.000000000000000000
+                    Margins.Right = 10.000000000000000000
+                    Margins.Bottom = 10.000000000000000000
+                    Position.X = 15.000000000000000000
+                    Position.Y = 10.000000000000000000
+                    Size.Width = 28.000000000000000000
+                    Size.Height = 28.000000000000000000
+                    Size.PlatformDefault = False
+                    Stroke.Thickness = 0.000000000000000000
+                  end
+                  object Label8: TLabel
+                    Align = Client
+                    StyledSettings = [Family]
+                    Margins.Top = 10.000000000000000000
+                    Margins.Right = 10.000000000000000000
+                    Margins.Bottom = 10.000000000000000000
+                    Size.Width = 182.000000000000000000
+                    Size.Height = 28.000000000000000000
+                    Size.PlatformDefault = False
+                    Text = 'Receitas'
+                    TabOrder = 0
+                    object Line9: TLine
+                      Align = Bottom
+                      LineType = Bottom
+                      Position.Y = 27.000000000000000000
+                      Size.Width = 182.000000000000000000
+                      Size.Height = 1.000000000000000000
+                      Size.PlatformDefault = False
+                    end
+                  end
+                end
+                object BotaoDespesas: TSpeedButton
+                  Align = Top
+                  Padding.Left = 15.000000000000000000
+                  Position.Y = 48.000000000000000000
+                  Size.Width = 245.000000000000000000
+                  Size.Height = 48.000000000000000000
+                  Size.PlatformDefault = False
+                  OnClick = BotaoClientesClick
+                  object Rectangle11: TRectangle
+                    Align = Left
+                    Fill.Bitmap.Bitmap.PNG = {
+                      89504E470D0A1A0A0000000D4948445200000024000000240806000000E10098
+                      98000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                      026B494441545847EDD73D68144118C6F18B46410BA3622436A21805B1505434
+                      55441B4130858860958041B00D886221882858681F0441218582F85D2B221646
+                      0B9322E01741317E838286287EFD9FBB7D619C9DDDCB6E3687C53EF0CBED6626
+                      B76F666776EE2A65CA4C314DD1AB9BB9585D3B9CF68C60BC76989C0DF8D320BA
+                      D63F9911BDFE37C95BD04574606302B55D422199CC2DDB8A7AD986D0DFBA62B7
+                      2C34A9D5E961ED30318F700E3FAB67F134631FD657CF92A3D1D47BA5A69CD46E
+                      CA82EAA52CA85E1A559056D45B0CE1252630E914B5EC7FE03C76620EDCCC4227
+                      1655CFEAA488826E62253227EF933A292AE6048E46C7CA5AECC23A2CC6273CC5
+                      75DC81F54BCC5446E8382CCBA08B86FA99416C466AF216A4DB6423AE8BBC87DB
+                      7E17FDB8ECFC4E34C1F72231790AD204B639A391F18B91FD5042EFAFBFDF8260
+                      F214A4D56409DDA61B58056521CEE237DC3ECF301BB1E429484B5BD1C4F5DBF4
+                      614EB752CFBC359807E530FCBE3D88256B41BF60CF9963F0DB774039059D3F81
+                      AEB13D3A77697463C95A909EC096ABF0DBF740590E15750F9A337E3FD1533C96
+                      AC050DC3721F7EFB632C819B051880DF37B8A5E863A7DF31CD282CB710EAF30D
+                      57701036B9759BF59DCCEDF706B1CC47D29086E8BFB2D571067EFB2168C9BF88
+                      CE3FC3F20E6EDFDB08E600B214A58D52D1B711BFAD1BCA52F4421FEC954DF0FB
+                      F685F6324B0B5620AD8F4593F103D4F701ECA2CA571CC1057C814673374EA30D
+                      16ED71EDB5C362A36D43B7D1FFEFD39ED4521DC999FA51705EE339BAE0BEBF46
+                      A715FA566BB7D872129A7FD31AED4DDA0E42A3613EC2E65843A2F9A2EDE01A5E
+                      E13BC6A0D5D407AD682795CA5FB630AE4ABEFF2DD30000000049454E44AE4260
+                      82}
+                    Fill.Bitmap.WrapMode = TileStretch
+                    Fill.Kind = Bitmap
+                    Margins.Top = 10.000000000000000000
+                    Margins.Right = 10.000000000000000000
+                    Margins.Bottom = 10.000000000000000000
+                    Position.X = 15.000000000000000000
+                    Position.Y = 10.000000000000000000
+                    Size.Width = 28.000000000000000000
+                    Size.Height = 28.000000000000000000
+                    Size.PlatformDefault = False
+                    Stroke.Thickness = 0.000000000000000000
+                  end
+                  object Label9: TLabel
+                    Align = Client
+                    StyledSettings = [Family]
+                    Margins.Top = 10.000000000000000000
+                    Margins.Right = 10.000000000000000000
+                    Margins.Bottom = 10.000000000000000000
+                    Size.Width = 182.000000000000000000
+                    Size.Height = 28.000000000000000000
+                    Size.PlatformDefault = False
+                    Text = 'Despesas'
+                    TabOrder = 0
+                    object Line10: TLine
+                      Align = Bottom
+                      LineType = Bottom
+                      Position.Y = 27.000000000000000000
+                      Size.Width = 182.000000000000000000
+                      Size.Height = 1.000000000000000000
+                      Size.PlatformDefault = False
+                    end
+                  end
+                end
+              end
+            end
+          end
+        end
+      end
+      object TabCadastro: TTabItem
+        CustomIcon = <
+          item
+          end>
+        IsSelected = False
+        Size.Width = 193.000000000000000000
+        Size.Height = 49.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = ''
+        TabOrder = 0
+        Text = 'TabCadastro'
+        ExplicitSize.cx = 193.000000000000000000
+        ExplicitSize.cy = 49.000000000000000000
+        object Layout1: TLayout
+          Align = Client
+          Size.Width = 386.000000000000000000
+          Size.Height = 468.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+        end
+      end
+    end
+  end
+end
