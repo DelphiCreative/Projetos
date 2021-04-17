@@ -1,0 +1,50 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  Caption = 'Form2'
+  ClientHeight = 487
+  ClientWidth = 594
+  Position = DesktopCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object Layout1: TLayout
+    Position.X = 64.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 457.000000000000000000
+    Size.Height = 305.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+  end
+  object Button1: TButton
+    Position.X = 248.000000000000000000
+    Position.Y = 344.000000000000000000
+    TabOrder = 2
+    Text = 'Ativar'
+    OnClick = Button1Click
+  end
+  object tabSlide: TFDMemTable
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired, uvAutoCommitUpdates]
+    UpdateOptions.CheckRequired = False
+    UpdateOptions.AutoCommitUpdates = True
+    Left = 136
+    Top = 232
+    object tabSlideID: TAutoIncField
+      FieldName = 'ID'
+    end
+    object tabSlideDescricao: TStringField
+      FieldName = 'Descricao'
+      Size = 50
+    end
+    object tabSlideImagem: TStringField
+      FieldName = 'Imagem'
+      Size = 50
+    end
+  end
+end

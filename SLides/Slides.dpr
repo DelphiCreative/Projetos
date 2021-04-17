@@ -1,10 +1,10 @@
-program FastApp;
+program Slides;
 
 uses
   System.StartUpCopy,
   FMX.Forms,
   uMain in 'uMain.pas' {Form2},
-  FMX.Fast in '..\FMX.Fast.pas';
+  FMX.Slides in 'FMX.Slides.pas';
 
 {$R *.res}
 

@@ -1,0 +1,231 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  Caption = 'Quizz'
+  ClientHeight = 524
+  ClientWidth = 340
+  Position = DesktopCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnClose = FormClose
+  DesignerMasterStyle = 3
+  object Memo1: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Lines.Strings = (
+      '{'
+      '  "Desenhos" : {'
+      '    "Descubra de quem s'#227'o as frases" : {'
+      '      '
+      #9'  "pergunta1" : {'
+      '        "questao" : "Eu vou detonar",'
+      '        "correta" : "D",'
+      '        "opcoes" : {'
+      '          "A" : "Tarzan",'
+      '          "B" : "Homem-aranha",'
+      '          "C" : "Scooby Doo",'
+      '          "D" : "Detona Ralph",'
+      '          "E" : "Sonic"'
+      '        }'
+      '      },'
+      '      '
+      #9'  "pergunta2" : {'
+      '        "questao" : "Eu gosto de abra'#231'os quentinhos",'
+      '        "correta" : "A",'
+      '        "opcoes" : {'
+      '          "A" : "Olaf",'
+      '          "B" : "Elsa",'
+      '          "C" : "Anna",'
+      '          "D" : "Sven"         '
+      '        }'
+      '      },'
+      '      '
+      #9'  "pergunta3" : {'
+      '        "questao" : "Eu riu na cara do perigo",'
+      '        "correta" : "C",'
+      '        "opcoes" : {'
+      '          "A" : "Pumba",'
+      '          "B" : "Tim'#227'o",'
+      '          "C" : "Simba",'
+      '          "D" : "Mufasa",'
+      '          "E" : "Scar"'
+      '        }'
+      '      },'
+      '      '
+      #9'  "pergunta4" : {'
+      '        "questao" : "Ao infinito e al'#233'm",'
+      '        "correta" : "B",'
+      '        "opcoes" : {'
+      '          "A" : "Woody",'
+      '          "B" : "Buzz Lightyear",'
+      '          "C" : "Andy",'
+      '          "D" : "Sr. Cabe'#231'a de Batata",'
+      '          "E" : "Bala no Alvo"'
+      '        }'
+      '      }'
+      '    }'
+      '  }'
+      '}')
+    Position.X = 304.000000000000000000
+    Position.Y = 16.000000000000000000
+    Size.Width = 497.000000000000000000
+    Size.Height = 433.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Viewport.Width = 484.000000000000000000
+    Viewport.Height = 425.000000000000000000
+  end
+  object Rectangle1: TRectangle
+    Align = Client
+    Fill.Color = xFF424242
+    Size.Width = 340.000000000000000000
+    Size.Height = 524.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Color = claWhite
+    Stroke.Thickness = 0.000000000000000000
+    object TabControl1: TTabControl
+      Align = Client
+      Size.Width = 340.000000000000000000
+      Size.Height = 340.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'tabcontrolstyle'
+      TabHeight = 49.000000000000000000
+      TabIndex = 1
+      TabOrder = 0
+      TabPosition = None
+    end
+    object GridPanelLayout1: TGridPanelLayout
+      Align = Bottom
+      Margins.Top = 10.000000000000000000
+      Margins.Bottom = 10.000000000000000000
+      Position.Y = 471.000000000000000000
+      Size.Width = 340.000000000000000000
+      Size.Height = 43.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      ColumnCollection = <
+        item
+          Value = 50.000000000000000000
+        end
+        item
+          Value = 50.000000000000000000
+        end>
+      ControlCollection = <
+        item
+          Column = 0
+          Control = Rectangle2
+          Row = 0
+        end
+        item
+          Column = 1
+          Control = Rectangle3
+          Row = 0
+        end>
+      RowCollection = <
+        item
+          Value = 100.000000000000000000
+        end
+        item
+          SizeStyle = Auto
+        end>
+      object Rectangle2: TRectangle
+        Align = Client
+        Fill.Color = xFF2563D1
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 3.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Margins.Bottom = 3.000000000000000000
+        Size.Width = 150.000000000000000000
+        Size.Height = 37.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Color = xFF2563D1
+        XRadius = 5.000000000000000000
+        YRadius = 5.000000000000000000
+        object Text1: TText
+          Align = Client
+          Cursor = crHandPoint
+          Size.Width = 150.000000000000000000
+          Size.Height = 37.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Anterior'
+          TextSettings.FontColor = claWhite
+          OnClick = Text1Click
+        end
+      end
+      object Rectangle3: TRectangle
+        Align = Client
+        Fill.Color = xFF2563D1
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 3.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Margins.Bottom = 3.000000000000000000
+        Size.Width = 150.000000000000000000
+        Size.Height = 37.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Color = xFF2563D1
+        XRadius = 5.000000000000000000
+        YRadius = 5.000000000000000000
+        object Text2: TText
+          Align = Client
+          Cursor = crHandPoint
+          Size.Width = 150.000000000000000000
+          Size.Height = 37.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Pr'#243'ximo'
+          TextSettings.FontColor = claWhite
+          OnClick = Text2Click
+        end
+      end
+    end
+    object Rectangle4: TRectangle
+      Align = Top
+      Fill.Color = xFF0C0C0C
+      Padding.Left = 15.000000000000000000
+      Padding.Bottom = 20.000000000000000000
+      Size.Width = 340.000000000000000000
+      Size.Height = 121.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Thickness = 0.000000000000000000
+      object Label1: TLabel
+        Align = Bottom
+        AutoSize = True
+        StyledSettings = [Family, Style]
+        HitTest = True
+        Margins.Left = 10.000000000000000000
+        Position.X = 25.000000000000000000
+        Position.Y = 37.000000000000000000
+        Size.Width = 315.000000000000000000
+        Size.Height = 37.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 30.000000000000000000
+        TextSettings.FontColor = claWhite
+        Text = 'Diego Cataneo'
+        TabOrder = 0
+      end
+      object Label2: TLabel
+        Align = Bottom
+        StyledSettings = [Family, Style]
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Position.X = 25.000000000000000000
+        Position.Y = 79.000000000000000000
+        Size.Width = 315.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.FontColor = claWhite
+        Text = 'DELPHI CREATIVE'
+        TabOrder = 1
+        OnClick = Label2Click
+      end
+      object ShadowEffect1: TShadowEffect
+        Distance = 3.000000000000000000
+        Direction = 45.000000000000000000
+        Softness = 0.300000011920929000
+        Opacity = 0.600000023841857900
+        ShadowColor = claBlack
+      end
+    end
+  end
+end

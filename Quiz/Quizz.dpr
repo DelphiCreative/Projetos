@@ -1,10 +1,10 @@
-program FastApp;
+program Quizz;
 
 uses
   System.StartUpCopy,
   FMX.Forms,
   uMain in 'uMain.pas' {Form2},
-  FMX.Fast in '..\FMX.Fast.pas';
+  Firebase.Realtime in '..\..\Aplicativos\Units\Firebase.Realtime.pas';
 
 {$R *.res}
 

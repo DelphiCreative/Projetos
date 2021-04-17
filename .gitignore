@@ -1,2 +1,13 @@
 
 *.res
+*.~1~
+*.~2~
+*.~4~
+*.7z
+*.deployproj
+*.local
+*.identcache
+*.~3~
+*.~6~
+*.~5~
+*.exe
