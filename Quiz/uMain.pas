@@ -49,10 +49,6 @@ implementation
 
 {$R *.fmx}
 
-uses Firebase.Realtime;
-
-var RT : TRealtime;
-
 procedure TForm2.AnimacaoFinish(Sender: TObject);
 begin
    if TFloatAnimation(Sender).Tag = 0 then begin
@@ -83,11 +79,7 @@ begin
    Rectangle3.Visible := false;
    Label1.Visible := false;
    Label2.Visible := false;
-
-   RT := TRealtime.Create('democursofirebase-default-rtdb','5UybNyF0LT2fx3mLQQsQypBF7AoM5vnH2q89WFsK');
-
-   Quiz( RT.Collection('Quiz').Open );
-//   Quiz(Memo1.Text);
+   Quiz(Memo1.Text);
 
 end;
 

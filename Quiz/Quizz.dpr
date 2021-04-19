@@ -3,8 +3,7 @@ program Quizz;
 uses
   System.StartUpCopy,
   FMX.Forms,
-  uMain in 'uMain.pas' {Form2},
-  Firebase.Realtime in '..\..\Aplicativos\Units\Firebase.Realtime.pas';
+  uMain in 'uMain.pas' {Form2};
 
 {$R *.res}
 
