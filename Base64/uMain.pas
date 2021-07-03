@@ -6,11 +6,11 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
   System.Classes, Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB,
   Vcl.Grids, Vcl.DBGrids, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.ComCtrls,
-  Vcl.DBCtrls, Vcl.Mask, Vcl.Buttons;
+  Vcl.DBCtrls, Vcl.Mask, Vcl.Buttons, VCL.Firebase.Realtime;
 
 type
-  TForm2 = class(TForm)
-    Image1: TImage;
+  TFormMain = class(TForm)
+    ImagemProduto: TImage;
     DBEdit1: TDBEdit;
     DBEdit2: TDBEdit;
     DBRichEdit1: TDBRichEdit;
@@ -29,34 +29,46 @@ type
     procedure FormCreate(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
     procedure SpeedButton2Click(Sender: TObject);
+    procedure DBEdit1Change(Sender: TObject);
   private
     { Private declarations }
   public
     { Public declarations }
+    RT : TRealtime;
     procedure CarregaCategoria;
   end;
 
 var
-  Form2: TForm2;
+  FormMain: TFormMain;
 
 implementation
 
 {$R *.dfm}
 
-uses uContainer, VCL.Helpers;
+uses uContainer, VCL.Helpers, VCL.Image.Base64;
 
-procedure TForm2.CarregaCategoria;
+
+procedure TFormMain.CarregaCategoria;
 begin
    DBComboBox1.Lista(Categorias);
 end;
 
-procedure TForm2.FormCreate(Sender: TObject);
+procedure TFormMain.DBEdit1Change(Sender: TObject);
 begin
-   Container.SQLite.Connected := True;
-   ProdutosGrid.AutoSize;
+   ImagemProduto.Base64(Container.SQLite.ExecSQLScalar('SELECT  Base64 FROM imagem WHERE _id = "' +DBEdit1.Text+'"' ));
 end;
 
-procedure TForm2.SpeedButton1Click(Sender: TObject);
+procedure TFormMain.FormCreate(Sender: TObject);
+begin
+   ImagemProduto.Popup;
+   Container.SQLite.Connected := True;
+   ProdutosGrid.AutoSize;
+
+   RT := TRealtime.Create('democursofirebase-default-rtdb','5UybNyF0LT2fx3mLQQsQypBF7AoM5vnH2q89WFsK');
+
+end;
+
+procedure TFormMain.SpeedButton1Click(Sender: TObject);
 begin
    if Container.Produtos.State = dsBrowse then
       Container.Produtos.Append
@@ -65,7 +77,7 @@ begin
 
 end;
 
-procedure TForm2.SpeedButton2Click(Sender: TObject);
+procedure TFormMain.SpeedButton2Click(Sender: TObject);
 begin
    if Container.Produtos.State = dsBrowse then
       Container.Produtos.Delete

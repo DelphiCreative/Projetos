@@ -1,0 +1,167 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  Caption = 'QRCode'
+  ClientHeight = 535
+  ClientWidth = 366
+  Position = DesktopCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object Rectangle1: TRectangle
+    Align = Client
+    Fill.Color = claWhite
+    Size.Width = 366.000000000000000000
+    Size.Height = 535.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Color = claWhite
+    object Rectangle2: TRectangle
+      Align = Top
+      Fill.Color = claCornflowerblue
+      Size.Width = 366.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Color = claCornflowerblue
+      object ShadowEffect1: TShadowEffect
+        Distance = 2.000000000000000000
+        Direction = 45.000000000000000000
+        Softness = 0.300000011920929000
+        Opacity = 0.300000011920929000
+        ShadowColor = claBlack
+      end
+      object Label1: TLabel
+        Align = Client
+        StyledSettings = [Style]
+        Size.Width = 366.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Century Gothic'
+        TextSettings.Font.Size = 18.000000000000000000
+        TextSettings.FontColor = claWhite
+        TextSettings.HorzAlign = Center
+        Text = 'QRCODE'
+        TabOrder = 0
+      end
+    end
+    object Rectangle3: TRectangle
+      Align = Bottom
+      Fill.Color = claCornflowerblue
+      Margins.Left = 20.000000000000000000
+      Margins.Right = 20.000000000000000000
+      Margins.Bottom = 20.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 465.000000000000000000
+      Size.Width = 326.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Color = claCornflowerblue
+      XRadius = 10.000000000000000000
+      YRadius = 10.000000000000000000
+      object ShadowEffect2: TShadowEffect
+        Distance = 2.000000000000000000
+        Direction = 45.000000000000000000
+        Softness = 0.300000011920929000
+        Opacity = 0.300000011920929000
+        ShadowColor = claBlack
+      end
+      object Label2: TLabel
+        Align = Client
+        StyledSettings = [Style]
+        HitTest = True
+        Size.Width = 326.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Family = 'Century Gothic'
+        TextSettings.FontColor = claWhite
+        TextSettings.HorzAlign = Center
+        Text = 'GERAR QRCODE'
+        TabOrder = 0
+        OnClick = Label2Click
+      end
+    end
+    object Layout1: TLayout
+      Align = Top
+      Position.Y = 50.000000000000000000
+      Size.Width = 366.000000000000000000
+      Size.Height = 231.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      object Rectangle4: TRectangle
+        Align = Center
+        Fill.Color = claWhite
+        Size.Width = 199.000000000000000000
+        Size.Height = 176.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Color = xFFE0E0E0
+        object Image1: TImage
+          MultiResBitmap = <
+            item
+            end>
+          Align = Client
+          Size.Width = 199.000000000000000000
+          Size.Height = 176.000000000000000000
+          Size.PlatformDefault = False
+        end
+      end
+    end
+    object Edit1: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Top
+      StyleLookup = 'transparentedit'
+      TabOrder = 3
+      TextSettings.Font.Size = 18.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 321.000000000000000000
+      Margins.Left = 20.000000000000000000
+      Margins.Top = 40.000000000000000000
+      Margins.Right = 20.000000000000000000
+      Size.Width = 326.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TextPrompt = 'Insira uma descri'#231#227'o'
+      StyledSettings = [Family, Style, FontColor]
+    end
+    object Line1: TLine
+      Align = Top
+      LineType = Bottom
+      Margins.Left = 20.000000000000000000
+      Margins.Right = 20.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 343.000000000000000000
+      Size.Width = 326.000000000000000000
+      Size.Height = 2.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Color = claDimgray
+    end
+    object Edit2: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Top
+      StyleLookup = 'transparentedit'
+      TabOrder = 5
+      TextSettings.Font.Size = 18.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 365.000000000000000000
+      Margins.Left = 20.000000000000000000
+      Margins.Top = 20.000000000000000000
+      Margins.Right = 20.000000000000000000
+      Size.Width = 326.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TextPrompt = 'Texto opcional'
+      StyledSettings = [Family, Style, FontColor]
+    end
+    object Line2: TLine
+      Align = Top
+      LineType = Bottom
+      Margins.Left = 20.000000000000000000
+      Margins.Right = 20.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 387.000000000000000000
+      Size.Width = 326.000000000000000000
+      Size.Height = 2.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Color = claDimgray
+    end
+  end
+end

@@ -1,9 +1,9 @@
-object Form2: TForm2
+object FormMain: TFormMain
   Left = 0
   Top = 0
   Caption = 'Cat'#225'logo de Produtos'
-  ClientHeight = 451
-  ClientWidth = 594
+  ClientHeight = 455
+  ClientWidth = 595
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,6 +11,7 @@ object Form2: TForm2
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poDesktopCenter
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
@@ -20,7 +21,7 @@ object Form2: TForm2
     Width = 193
     Height = 184
   end
-  object Image1: TImage
+  object ImagemProduto: TImage
     Left = 10
     Top = 16
     Width = 189
@@ -85,6 +86,7 @@ object Form2: TForm2
     DataField = '_id'
     DataSource = Container.ProdutosSource
     TabOrder = 0
+    OnChange = DBEdit1Change
   end
   object DBEdit2: TDBEdit
     Left = 310
@@ -144,7 +146,7 @@ object Form2: TForm2
   object ProdutosGrid: TDBGrid
     Left = 8
     Top = 240
-    Width = 578
+    Width = 579
     Height = 203
     DataSource = Container.ProdutosSource
     TabOrder = 6

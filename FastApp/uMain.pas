@@ -253,7 +253,7 @@ begin
                   '   Ativo BOOLEAN '+
                   '   ); ');
 
-  SQLite.ExecSQL('DROP TRIGGER IF EXISTS Validar_Cliente; '+
+   SQLite.ExecSQL('DROP TRIGGER IF EXISTS Validar_Cliente; '+
                  'CREATE TRIGGER IF NOT EXISTS Validar_Cliente '+
                  'BEFORE INSERT ON Cliente '+
                  'BEGIN '+

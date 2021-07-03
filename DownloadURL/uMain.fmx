@@ -1,0 +1,49 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  Caption = 'Form2'
+  ClientHeight = 480
+  ClientWidth = 574
+  Position = DesktopCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object Rectangle1: TRectangle
+    Position.X = 296.000000000000000000
+    Position.Y = 224.000000000000000000
+    Size.Width = 241.000000000000000000
+    Size.Height = 169.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Button1: TButton
+    Position.X = 256.000000000000000000
+    Position.Y = 16.000000000000000000
+    TabOrder = 1
+    Text = 'Carregar'
+    OnClick = Button1Click
+  end
+  object ListBox1: TListBox
+    Position.X = 16.000000000000000000
+    Position.Y = 48.000000000000000000
+    Size.Width = 265.000000000000000000
+    Size.Height = 345.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    DisableFocusEffect = True
+    DefaultItemStyles.ItemStyle = ''
+    DefaultItemStyles.GroupHeaderStyle = ''
+    DefaultItemStyles.GroupFooterStyle = ''
+    Viewport.Width = 261.000000000000000000
+    Viewport.Height = 341.000000000000000000
+    object Image1: TImage
+      MultiResBitmap = <
+        item
+        end>
+      Position.X = 280.000000000000000000
+      Size.Width = 233.000000000000000000
+      Size.Height = 153.000000000000000000
+      Size.PlatformDefault = False
+    end
+  end
+end

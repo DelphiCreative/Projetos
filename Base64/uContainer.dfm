@@ -1,6 +1,6 @@
 object Container: TContainer
   OldCreateOrder = False
-  Height = 179
+  Height = 283
   Width = 417
   object SQLite: TFDConnection
     LoginPrompt = False
@@ -20,6 +20,8 @@ object Container: TContainer
   end
   object Produtos: TFDQuery
     BeforeInsert = ProdutosBeforeInsert
+    AfterPost = ProdutosAfterPost
+    BeforeDelete = ProdutosBeforeDelete
     Connection = SQLite
     Left = 184
     Top = 40
@@ -33,5 +35,11 @@ object Container: TContainer
     Connection = SQLite
     Left = 288
     Top = 40
+  end
+  object Imagem: TFDQuery
+    BeforeInsert = ProdutosBeforeInsert
+    Connection = SQLite
+    Left = 184
+    Top = 160
   end
 end
