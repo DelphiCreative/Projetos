@@ -1,0 +1,146 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 521
+  ClientWidth = 941
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object Button1: TButton
+    Position.X = 272.000000000000000000
+    Position.Y = 400.000000000000000000
+    Size.Width = 129.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    Text = 'Carregar Lista'
+    OnClick = Button1Click
+  end
+  object Memo1: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Lines.Strings = (
+      'INSERT INTO '
+      '   contatos (nome,telefone) '
+      'VALUES '
+      '   ('#39'M'#227'e'#39',  '#39'(14) 998877665'#39'),'
+      '   ('#39'Pai'#39',  '#39'(14) 998877665'#39'),'
+      '   ('#39'Irm'#227'o'#39','#39'(14) 998877665'#39'),'
+      '   ('#39'Filho'#39','#39'(14) 998877665'#39');'
+      ''
+      ' ')
+    StyledSettings = [Size, Style, FontColor]
+    TextSettings.Font.Family = 'Consolas'
+    Position.X = 272.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 641.000000000000000000
+    Size.Height = 121.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 7
+    Viewport.Width = 621.000000000000000000
+    Viewport.Height = 117.000000000000000000
+  end
+  object Rectangle1: TRectangle
+    Align = Left
+    Fill.Color = claWhite
+    Size.Width = 241.000000000000000000
+    Size.Height = 521.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Thickness = 0.000000000000000000
+    object VertScrollBox1: TVertScrollBox
+      Align = Client
+      Size.Width = 241.000000000000000000
+      Size.Height = 521.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Viewport.Width = 241.000000000000000000
+      Viewport.Height = 521.000000000000000000
+    end
+  end
+  object Memo2: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Lines.Strings = (
+      'INSERT INTO mensagens (id_Contato,Mensagem,DataEnvio,HoraEnvio)'
+      'VALUES (2,'#39'Como voc'#234' esta?'#39',Date(), Time(now()));')
+    StyledSettings = [Size, Style, FontColor]
+    TextSettings.Font.Family = 'Consolas'
+    Position.X = 272.000000000000000000
+    Position.Y = 176.000000000000000000
+    Size.Width = 641.000000000000000000
+    Size.Height = 177.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+    Viewport.Width = 637.000000000000000000
+    Viewport.Height = 173.000000000000000000
+  end
+  object Button3: TButton
+    Position.X = 752.000000000000000000
+    Position.Y = 141.000000000000000000
+    Size.Width = 160.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Text = 'Salvar Contato'
+    OnClick = Button3Click
+  end
+  object Button4: TButton
+    Position.X = 752.000000000000000000
+    Position.Y = 365.000000000000000000
+    Size.Width = 160.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Text = 'Salvar mensagem'
+    OnClick = Button4Click
+  end
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      'LockingMode=Normal'
+      'DriverID=SQLite')
+    Left = 320
+    Top = 56
+  end
+  object FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink
+    Left = 320
+    Top = 112
+  end
+  object FDQuery1: TFDQuery
+    Connection = FDConnection1
+    Left = 320
+    Top = 168
+  end
+  object ImageList1: TImageList
+    Source = <
+      item
+        MultiResBitmap.Height = 48
+        MultiResBitmap.Width = 48
+        MultiResBitmap = <
+          item
+            Width = 48
+            Height = 48
+            PNG = {
+              89504E470D0A1A0A0000000D49484452000000300000003008060000005702F9
+              87000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              0110494441546843ED963B0E01611845C72351885EB02B8DD20A2C472312EBD0
+              28B0051D8BD0A9B85FC66D7EC6F37F897B92137F6424E70E91298410420821FE
+              98C6F5950CE00476E1CEDEC8841A1CC1213CC023BCC1C6ECE1F9EA0CD6616AAC
+              C15AD865039AF0861EE44534F508379EF6E15D96D0BD38D588AA786BACA40D57
+              D0FDD01CC61C61BFF929743BB6B0031F927AC457F124D5082FF124F608AFF124
+              D68820F124F488A0F124D48828F1C4F788A8F1C4D78824F1E4DB1149E3C9A723
+              B28827EF8EC82A9EBC3A22CB78F26C44D6F1C44236D08DB4C7E17B8FC4766D36
+              F1A4EA9B70CDEACEBB3C1B91753CA91AF113F1C442D790F1760E126FFF10A168
+              C171792C16F0541E8510420821841F8AE2023C54DD3A5B1BF4AF000000004945
+              4E44AE426082}
+            FileName = 'C:\Users\Diego\Downloads\seta_baixo.png'
+          end>
+        Name = 'SetaBaixo'
+      end>
+    Destination = <>
+    Left = 432
+    Top = 376
+  end
+end
