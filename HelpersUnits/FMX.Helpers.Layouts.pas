@@ -29,7 +29,7 @@ procedure TLayoutHelper.AnimaCard(Card: TRectangle; aProperty: String);
 var
    FloatOpacity, FloatPositionX :TFloatAnimation;
 begin
-
+   BeginUpdate;
    Card.Height := Self.Height;
    Card.Width := Self.Width - 10;
    Card.Align := TAlignLayout.None;
@@ -89,6 +89,7 @@ begin
 
    FloatPositionX.Start;
    FloatOpacity.Start;
+   EndUpdate;
 end;
 
 procedure TLayoutHelper.AnimaCard(Card: TRectangle);
@@ -159,7 +160,6 @@ begin
    FloatWidth.Start;
    FloatOpacity.Start ;
 
-
 end;
 
 constructor TLayoutHelper.Create(AOwner: TComponent; AlignLayout: TAlignLayout);
@@ -180,8 +180,10 @@ begin
 end;
 
 procedure TLayoutHelper.Finish(Sender: TObject);
+var I :Integer;
 begin
-   Self.Controls[0].Free;
+   for I := 0 to Self.Controls.Count - 2 do
+       Self.Controls[I].Free;
 end;
 
 { TGridPanelLayoutHelper }

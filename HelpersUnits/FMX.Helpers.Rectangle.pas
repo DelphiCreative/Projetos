@@ -26,6 +26,7 @@ type
      function TextCenter(aText: String; aFontSize:Single; aFontColor :TAlphaColors):TRectangle; overload;
      procedure LoadFromFile(const aFileName :string);
      procedure LoadFromURL(const aFileName :string);
+     procedure Color(aColor :TAlphaColor);
      procedure Sombrear;
   end;
 
@@ -50,6 +51,7 @@ begin
    Size.PlatformDefault := False;
    Fill.Color := TAlphaColorRec.White;
    Stroke.Color := TAlphaColorRec.White;
+   HitTest := False;
 end;
 
 constructor TRectangleHelper.Create(AOwner: TComponent;
@@ -73,9 +75,14 @@ begin
    inherited Create(AOwner);
    TFMXObject(AOwner).AddObject(Self);
    Size.PlatformDefault := False;
+   Color(aColor);
+   HitTest := False;
+end;
+
+procedure TRectangleHelper.Color(aColor: TAlphaColor);
+begin
    Fill.Color := aColor;
    Stroke.Color := aColor;
-
 end;
 
 constructor TRectangleHelper.Create(AOwner: TComponent; aText: AnsiString);
