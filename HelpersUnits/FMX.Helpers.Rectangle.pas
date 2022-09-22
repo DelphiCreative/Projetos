@@ -20,10 +20,9 @@ type
 
      constructor Create(AOwner :TComponent; aText :AnsiString) overload;
 
-
      function SizeH(H :Real) :TRectangle; overload;
      function SizeW(H :Real) :TRectangle; overload;
-     function TextCenter(aText: String; aFontSize:Single; aFontColor :TAlphaColors):TRectangle; overload;
+
      procedure LoadFromFile(const aFileName :string);
      procedure LoadFromURL(const aFileName :string);
      procedure Color(aColor :TAlphaColor);
@@ -34,7 +33,8 @@ implementation
 
 uses
 
-System.IOUtils, FMX.Helpers.Text;
+System.IOUtils;
+
 { TRectangleHelper }
 
 constructor TRectangleHelper.Create(AOwner: TComponent;
@@ -164,13 +164,5 @@ begin
    Sombra.ShadowColor := TAlphaColorRec.Black;
 end;
 
-function TRectangleHelper.TextCenter(aText: String; aFontSize:Single;
-  aFontColor :TAlphaColors):TRectangle;
-var T :TText;
-begin
-  // T := TText.Create(Self,aText,aFontSize,aFontColor,TAlignLayout.Client);
-
-
-end;
 
 end.

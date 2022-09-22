@@ -2,8 +2,8 @@ object Form2: TForm2
   Left = 0
   Top = 0
   Caption = 'Form2'
-  ClientHeight = 480
-  ClientWidth = 574
+  ClientHeight = 628
+  ClientWidth = 1016
   Position = DesktopCenter
   FormFactor.Width = 320
   FormFactor.Height = 480
@@ -45,5 +45,17 @@ object Form2: TForm2
       Size.Height = 153.000000000000000000
       Size.PlatformDefault = False
     end
+  end
+  object Memo1: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Position.X = 560.000000000000000000
+    Position.Y = 56.000000000000000000
+    Size.Width = 345.000000000000000000
+    Size.Height = 337.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    Viewport.Width = 341.000000000000000000
+    Viewport.Height = 333.000000000000000000
   end
 end

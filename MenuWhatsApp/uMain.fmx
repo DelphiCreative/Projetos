@@ -64,8 +64,15 @@ object Form1: TForm1
     Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
     DataDetectorTypes = []
     Lines.Strings = (
-      'INSERT INTO mensagens (id_Contato,Mensagem,DataEnvio,HoraEnvio)'
-      'VALUES (2,'#39'Como voc'#234' esta?'#39',Date(), Time(now()));')
+      'INSERT INTO '
+      '   mensagens (id_Contato,Mensagem,DataEnvio,HoraEnvio)'
+      'VALUES '
+      '   ('
+      '    1,'
+      '    '#39'Como voc'#234' esta?'#39','
+      '    Date(), '
+      '    Time(now())'
+      '   );')
     StyledSettings = [Size, Style, FontColor]
     TextSettings.Font.Family = 'Consolas'
     Position.X = 272.000000000000000000

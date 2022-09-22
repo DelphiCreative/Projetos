@@ -8,7 +8,7 @@ uses
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
   FMX.Controls.Presentation, FMX.StdCtrls, FMX.Objects, System.Net.URLClient,
   System.Net.HttpClient, System.Net.HttpClientComponent, FMX.Layouts,
-  FMX.ListBox;
+  FMX.ListBox, FMX.Memo.Types, FMX.ScrollBox, FMX.Memo;
 
 type
   TForm2 = class(TForm)
@@ -16,6 +16,7 @@ type
     Button1: TButton;
     ListBox1: TListBox;
     Image1: TImage;
+    Memo1: TMemo;
     procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
@@ -42,7 +43,23 @@ var
    L : TListBoxItem;
 begin
 
-   JSON :=  JSON.LoadFromURL('https://api.github.com/orgs/adobe/members');
+  // JSON :=  JSON.LoadFromURL('https://api.github.com/orgs/adobe/members');
+
+
+   JSON :=  JSON.LoadFromURL('https://appatm-85c17-default-rtdb.firebaseio.com/.json');
+
+   Memo1.Lines.Add('======================');
+   Memo1.Lines.Add(JSON.ToString);
+   Memo1.Lines.Add('======================');
+
+   JSON :=  JSON.LoadFromURL('https://ppatm-85c17-default-rtdb.firebaseio.com/.json');
+
+   Memo1.Lines.Add(JSON.ToString);
+
+   //                   RT := TRealtime.Create('appatm-85c17-default-rtdb','oObLw6ABXqjog5tNFmd2ZwQbK9QRsCfS5AXGJMhI');
+
+   abort;
+
 //   JSON :=  JSON.LoadFromURL('https://api.github.com/users/3ch023');
    for  I := 0 to JSON.Count - 1 do begin
 

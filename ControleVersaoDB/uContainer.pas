@@ -45,7 +45,7 @@ implementation
 
 procedure TContainer.DataModuleCreate(Sender: TObject);
 begin
-   SQLite.Connected := True;
+//   SQLite.Connected := True;
 end;
 
 procedure TContainer.SQLiteAfterConnect(Sender: TObject);

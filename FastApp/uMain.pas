@@ -17,7 +17,7 @@ uses
   FMX.Colors, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Error,
   FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def, FireDAC.Stan.Pool,
   FireDAC.Stan.Async, FireDAC.Phys, FireDAC.FMXUI.Wait, Data.DB,
-  FireDAC.Comp.Client, System.ImageList, FMX.ImgList;
+  FireDAC.Comp.Client, System.ImageList, FMX.ImgList, FMX.Memo.Types;
 
 type
   TForm2 = class(TForm)
