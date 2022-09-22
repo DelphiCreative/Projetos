@@ -46,7 +46,7 @@ implementation
 
 {$R *.fmx}
 
-uses FMX.Helpers.Layouts;
+uses FMX.Helpers;
 
 procedure TForm2.Button1Click(Sender: TObject);
 var R :TRectangle;
@@ -74,9 +74,9 @@ end;
 
 procedure TForm2.FormCreate(Sender: TObject);
 begin
-//   ImageList := ImageList1;
+   ImageList := ImageList1;
 
-//   TabControl1.BarButtons(TAlignLayout.Bottom);
+   TabControl1.BarButtons(TAlignLayout.Bottom);
 end;
 
 end.

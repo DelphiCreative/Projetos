@@ -127,7 +127,6 @@ begin
 
       NetHTTPClient.Get(aFileName,JsonStream);
 
-
       if TJSONObject.ParseJSONValue(JsonStream.DataString) is TJSONArray then
          Result := TJSONObject.ParseJSONValue(JsonStream.DataString) as TJSONArray
       else if TJSONObject.ParseJSONValue(JsonStream.DataString) is TJSONObject then
