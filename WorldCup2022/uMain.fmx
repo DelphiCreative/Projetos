@@ -1,0 +1,12 @@
+object frmMain: TfrmMain
+  Left = 0
+  Top = 0
+  Caption = 'World Cup 2022'
+  ClientHeight = 518
+  ClientWidth = 363
+  Position = ScreenCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 3
+end
