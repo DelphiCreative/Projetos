@@ -2,11 +2,22 @@ object frmMain: TfrmMain
   Left = 0
   Top = 0
   Caption = 'World Cup 2022'
-  ClientHeight = 518
-  ClientWidth = 363
+  ClientHeight = 641
+  ClientWidth = 940
   Position = ScreenCenter
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
   DesignerMasterStyle = 3
+  object VertScrollBox1: TVertScrollBox
+    Position.X = 40.000000000000000000
+    Position.Y = 56.000000000000000000
+    Size.Width = 329.000000000000000000
+    Size.Height = 489.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Viewport.Width = 329.000000000000000000
+    Viewport.Height = 489.000000000000000000
+  end
 end
