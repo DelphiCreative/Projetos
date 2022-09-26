@@ -4,7 +4,8 @@ uses
   System.StartUpCopy,
   FMX.Forms,
   uMain in 'uMain.pas' {frmMain},
-  uContainer in 'uContainer.pas' {Container: TDataModule};
+  uContainer in 'uContainer.pas' {Container: TDataModule},
+  FMX.Helpers in 'FMX.Helpers.pas';
 
 {$R *.res}
 

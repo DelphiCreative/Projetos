@@ -25,6 +25,7 @@ type
     SQLite: TFDConnection;
     ScriptDB: TFDScript;
     FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink;
+    tabAlbum: TFDQuery;
     procedure SQLiteBeforeConnect(Sender: TObject);
     procedure DataModuleCreate(Sender: TObject);
     procedure SQLiteAfterConnect(Sender: TObject);
@@ -45,7 +46,7 @@ implementation
 
 procedure TContainer.DataModuleCreate(Sender: TObject);
 begin
-   //SQLite.Connected := True;
+   SQLite.Connected := True;
 end;
 
 procedure TContainer.SQLiteAfterConnect(Sender: TObject);
@@ -56,7 +57,7 @@ end;
 procedure TContainer.SQLiteBeforeConnect(Sender: TObject);
 begin
    TFDConnection(Sender).DriverName := 'SQLite';
-   TFDConnection(Sender).Params.Database := TPath.Combine(TPAth.GetDocumentsPath,'ControleVersaoDB.db');
+   TFDConnection(Sender).Params.Database := TPath.Combine(TPAth.GetDocumentsPath,'WorldCup2022.db');
 end;
 
 { TFDConnectionHelper }
@@ -89,8 +90,6 @@ begin
       ExecSQL('INSERT INTO Versao (VersaoDB) VALUES (0)');
 
    Result := versao;
-
-
 
 end;
 

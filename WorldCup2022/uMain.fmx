@@ -16,7 +16,7 @@ object frmMain: TfrmMain
     Size.Width = 329.000000000000000000
     Size.Height = 489.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 1
+    TabOrder = 0
     Viewport.Width = 329.000000000000000000
     Viewport.Height = 489.000000000000000000
   end
