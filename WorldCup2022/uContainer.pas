@@ -26,6 +26,7 @@ type
     ScriptDB: TFDScript;
     FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink;
     tabAlbum: TFDQuery;
+    tabPaginas: TFDQuery;
     procedure SQLiteBeforeConnect(Sender: TObject);
     procedure DataModuleCreate(Sender: TObject);
     procedure SQLiteAfterConnect(Sender: TObject);

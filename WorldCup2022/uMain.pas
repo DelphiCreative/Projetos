@@ -18,6 +18,7 @@ type
   public
     { Public declarations }
     procedure Grade;
+    procedure Figurinha(Seq :String; var Grid :TGridPanelLayout);
 
   end;
 
@@ -30,6 +31,19 @@ implementation
 
 uses uContainer, FMX.Helpers;
 
+procedure TfrmMain.Figurinha(Seq: String; var Grid: TGridPanelLayout);
+begin
+   Container.tabPaginas.Open('SELECT * FROM Album WHERE Sequencia = '+Seq);
+   Container.tabPaginas.First;
+
+   while not Container.tabPaginas.eof  do begin
+
+
+      Container.tabPaginas.Next;
+   end;
+
+end;
+
 procedure TfrmMain.FormCreate(Sender: TObject);
 begin
    Grade;
@@ -39,6 +53,7 @@ procedure TfrmMain.Grade;
 var
   R :TRectangle;
   T, T2 :TText;
+  GridPanelLayout : TGridPanelLayout;
 
 begin
    Container.tabAlbum.Open('SELECT Album.*, Count(*) Total FROM Album GROUP BY Sequencia');
@@ -46,11 +61,8 @@ begin
 
    while not Container.tabAlbum.eof do begin
 
-      R := TRectangle.Create(VertScrollBox1);
-      VertScrollBox1.AddObject(R);
-      R.Align := TAlignLayout.Top;
-      R.Fill.Color := TAlphaColors.White;
-      R.Stroke.Color := TAlphaColors.White;
+      R := TRectangle.Create(VertScrollBox1,TAlignLayout.Top,TAlphaColors.White);
+
       R.Margins.Top := 10;
 
       T := TText.Create(R,
@@ -72,9 +84,27 @@ begin
                         TTextAlign.Center,
                         TAlignLayout.Right);
 
-      end else
-         T.Text := Container.tabAlbum.FieldByName('Grupo').AsString;
+      end;
 
+
+      R := TRectangle.Create(VertScrollBox1,TAlignLayout.Top,TAlphaColors.White);
+
+
+      if Container.tabAlbum.FieldByName('Total').AsInteger = 8 then begin
+         R.Height := (VertScrollBox1.Width/ 5) * 2;
+         GridPanelLayout := TGridPanelLayout.Create(R,2,5);
+
+      end else if Container.tabAlbum.FieldByName('Total').AsInteger = 11 then begin
+         R.Height := (VertScrollBox1.Width/ 5) * 3;
+         GridPanelLayout := TGridPanelLayout.Create(R,3,5);
+
+      end else if Container.tabAlbum.FieldByName('Total').AsInteger = 20 then begin
+         R.Height := (VertScrollBox1.Width/ 5) * 4;
+         GridPanelLayout := TGridPanelLayout.Create(R,4,5);
+
+      end;
+
+      Figurinha( Container.tabAlbum.FieldByName('Sequencia').AsString,GridPanelLayout);
 
       Container.tabAlbum.Next;
 

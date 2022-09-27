@@ -745,4 +745,9 @@ object Container: TContainer
     Left = 336
     Top = 56
   end
+  object tabPaginas: TFDQuery
+    Connection = SQLite
+    Left = 336
+    Top = 120
+  end
 end
