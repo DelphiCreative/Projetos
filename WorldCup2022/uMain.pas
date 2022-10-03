@@ -11,6 +11,7 @@ uses
 type
   TfrmMain = class(TForm)
     VertScrollBox1: TVertScrollBox;
+    Rectangle1: TRectangle;
     procedure FormCreate(Sender: TObject);
 
   private
@@ -32,12 +33,29 @@ implementation
 uses uContainer, FMX.Helpers;
 
 procedure TfrmMain.Figurinha(Seq: String; var Grid: TGridPanelLayout);
+var R :TRectangle;
+T :TText;
+
 begin
    Container.tabPaginas.Open('SELECT * FROM Album WHERE Sequencia = '+Seq);
    Container.tabPaginas.First;
 
    while not Container.tabPaginas.eof  do begin
+      R := TRectangle.Create(Grid,TAlignLayout.Client);
+      R.Stroke.Color := TAlphaColors.white;
+      R.Margins.Top := 1;
+      R.Margins.Left := 1;
+      R.Margins.Right := 1;
+      R.Margins.Bottom := 1;
 
+      T := TText.Create(R,
+                        Container.tabPaginas.FieldByName('IDFigurinha').AsString,
+                        TTextAlign.Center,
+                        TTextAlign.Center,
+                        TAlignLayout.Client,
+                        12
+                        );
+      T.TextSettings.FontColor := TAlphaColors.White;
 
       Container.tabPaginas.Next;
    end;
@@ -61,7 +79,7 @@ begin
 
    while not Container.tabAlbum.eof do begin
 
-      R := TRectangle.Create(VertScrollBox1,TAlignLayout.Top,TAlphaColors.White);
+      R := TRectangle.Create(VertScrollBox1,TAlignLayout.Top);
 
       R.Margins.Top := 10;
 
@@ -72,6 +90,7 @@ begin
                         TAlignLayout.Client,
                         16
                         );
+      T.TextSettings.FontColor := TAlphaColors.White;
 
       T.TextSettings.Font.Style := [TFontStyle.fsBold];
 
@@ -83,12 +102,11 @@ begin
                         TTextAlign.Leading,
                         TTextAlign.Center,
                         TAlignLayout.Right);
+        T2.TextSettings.FontColor := TAlphaColors.White;
 
       end;
 
-
-      R := TRectangle.Create(VertScrollBox1,TAlignLayout.Top,TAlphaColors.White);
-
+      R := TRectangle.Create(VertScrollBox1,TAlignLayout.Top);
 
       if Container.tabAlbum.FieldByName('Total').AsInteger = 8 then begin
          R.Height := (VertScrollBox1.Width/ 5) * 2;
@@ -101,11 +119,11 @@ begin
       end else if Container.tabAlbum.FieldByName('Total').AsInteger = 20 then begin
          R.Height := (VertScrollBox1.Width/ 5) * 4;
          GridPanelLayout := TGridPanelLayout.Create(R,4,5);
-
       end;
 
       Figurinha( Container.tabAlbum.FieldByName('Sequencia').AsString,GridPanelLayout);
 
+      R.AddObject(GridPanelLayout);
       Container.tabAlbum.Next;
 
    end;

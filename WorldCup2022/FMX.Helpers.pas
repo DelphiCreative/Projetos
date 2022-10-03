@@ -6,24 +6,22 @@ uses
   FMX.Layouts, FMX.Objects,FMX.Types,System.UITypes, System.Classes;
 
 type
-   TTextHelper = class helper for TText
+  TTextHelper = class helper for TText
     constructor Create(AOwner: TComponent;_text :String;
       _horzAlign :TTextAlign; _vertAlign: TTextAlign; _align:TAlignLayout;
       _size : Single  = 12) overload;
-   end;
+  end;
 
 type
-   TRectangleHelper = class helper for TRectangle
+  TRectangleHelper = class helper for TRectangle
     constructor Create(AOwner: TComponent; _align:TAlignLayout;
      _color :TAlphaColor = TAlphaColors.Null) overload;
-
-   end;
-
+  end;
 
 type
   TGridPanelLayoutHelper = class helper for TGridPanelLayout
-     constructor Create(AOwner :TComponent;const _row, _col  :Integer); overload;
-     procedure CreateGrid(const _row,_col:Integer);
+    constructor Create(AOwner :TComponent;const _row, _col  :Integer); overload;
+    procedure CreateGrid(const _row,_col:Integer);
   end;
 
 
