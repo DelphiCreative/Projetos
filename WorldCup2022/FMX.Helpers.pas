@@ -14,6 +14,14 @@ type
 
 type
   TRectangleHelper = class helper for TRectangle
+
+    function Top(_size :Single) :TRectangle;
+    function Left(_size :Single) :TRectangle;
+    function Bottom(_size :Single) :TRectangle;
+    function Right(_size :Single) :TRectangle;
+
+
+
     constructor Create(AOwner: TComponent; _align:TAlignLayout;
      _color :TAlphaColor = TAlphaColors.Null) overload;
   end;
@@ -85,6 +93,12 @@ end;
 
 { TRectangleHelper }
 
+function TRectangleHelper.Bottom(_size: Single): TRectangle;
+begin
+   Margins.Bottom := _size;
+   Result := Self;
+end;
+
 constructor TRectangleHelper.Create(AOwner: TComponent; _align: TAlignLayout;
   _color: TAlphaColor);
 begin
@@ -95,5 +109,25 @@ begin
    Stroke.Color := _color;
 
 end;
+
+function TRectangleHelper.Left(_size: Single): TRectangle;
+begin
+   Margins.Left := _size;
+   Result := Self;
+end;
+
+function TRectangleHelper.Right(_size: Single): TRectangle;
+begin
+   Margins.Right := _size;
+   Result := Self;
+end;
+
+function TRectangleHelper.Top(_size: Single): TRectangle;
+begin
+   Margins.Top := _size;
+   Result := Self;
+end;
+
+
 
 end.

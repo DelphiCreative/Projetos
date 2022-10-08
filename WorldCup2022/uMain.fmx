@@ -107,4 +107,24 @@ object frmMain: TfrmMain
       Viewport.Height = 501.000000000000000000
     end
   end
+  object Button1: TButton
+    Position.X = 488.000000000000000000
+    Position.Y = 128.000000000000000000
+    Size.Width = 129.000000000000000000
+    Size.Height = 44.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    Text = 'Button1'
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Position.X = 488.000000000000000000
+    Position.Y = 192.000000000000000000
+    Size.Width = 129.000000000000000000
+    Size.Height = 44.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    Text = 'Button1'
+    OnClick = Button2Click
+  end
 end
