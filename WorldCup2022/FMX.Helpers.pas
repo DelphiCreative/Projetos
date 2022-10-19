@@ -3,6 +3,7 @@ unit FMX.Helpers;
 interface
 
 uses
+  FMX.Effects,
   FMX.Layouts, FMX.Objects,FMX.Types,System.UITypes, System.Classes;
 
 type
@@ -14,14 +15,11 @@ type
 
 type
   TRectangleHelper = class helper for TRectangle
-
     function Top(_size :Single) :TRectangle;
     function Left(_size :Single) :TRectangle;
     function Bottom(_size :Single) :TRectangle;
     function Right(_size :Single) :TRectangle;
-
-
-
+    procedure Sombra;
     constructor Create(AOwner: TComponent; _align:TAlignLayout;
      _color :TAlphaColor = TAlphaColors.Null) overload;
   end;
@@ -88,7 +86,6 @@ begin
 
    ColumnCollection.EndUpdate;
    RowCollection.EndUpdate;
-
 end;
 
 { TRectangleHelper }
@@ -107,7 +104,6 @@ begin
    Align := _align;
    Fill.Color := _color;
    Stroke.Color := _color;
-
 end;
 
 function TRectangleHelper.Left(_size: Single): TRectangle;
@@ -122,12 +118,24 @@ begin
    Result := Self;
 end;
 
+procedure TRectangleHelper.Sombra;
+var Sombra : TShadowEffect;
+begin
+   Sombra := TShadowEffect.Create(Self);
+   Self.Stroke.Thickness := 0;
+   Self.AddObject(Sombra);
+   Sombra.Distance := 2;
+   Sombra.Direction := 45;
+   Sombra.Softness := 0.1;
+   Sombra.Opacity := 0.1;
+   Sombra.ShadowColor := TAlphaColors.black;
+
+end;
+
 function TRectangleHelper.Top(_size: Single): TRectangle;
 begin
    Margins.Top := _size;
    Result := Self;
 end;
-
-
 
 end.

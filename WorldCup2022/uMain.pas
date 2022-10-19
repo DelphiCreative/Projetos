@@ -16,6 +16,7 @@ type
     Button2: TButton;
     procedure Button1Click(Sender: TObject);
     procedure FigurinhaClick(Sender: TObject);
+    procedure CabecalhoClick(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
 
@@ -24,8 +25,8 @@ type
   public
     { Public declarations }
     ListRectangle : TObjectList<TRectangle>;
-    procedure Grade;
-    procedure Figurinha(Seq :String; var Grid :TGridPanelLayout);
+    procedure Grade(sql :String = '');
+    procedure Figurinha(Seq :String; var Grid :TGridPanelLayout;sql :String = '');
 
   end;
 
@@ -53,21 +54,36 @@ begin
   ListRectangle.Clear;
   VertScrollBox1.EndUpdate;
 
+  Grade(' AND Quantidade = 0');
+
 end;
 
-procedure TfrmMain.Figurinha(Seq: String; var Grid: TGridPanelLayout);
-var R :TRectangle;
-T :TText;
+procedure TfrmMain.CabecalhoClick(Sender: TObject);
+begin
+   if TRectangle(Sender).Height = 50 then
+      TRectangle(Sender).AnimateFloat('Height',
+      (((VertScrollBox1.Width /5) * TRectangle(Sender).Tag) + TRectangle(Sender).Height)
+      ,0.3, TAnimationType.In, TInterpolationType.Circular)
+   else
+      TRectangle(Sender).AnimateFloat('Height',50,0.3, TAnimationType.In, TInterpolationType.Circular)
+
+end;
+
+procedure TfrmMain.Figurinha(Seq :String; var Grid :TGridPanelLayout; sql :String = '');
+var
+  R :TRectangle;
+  T :TText;
 
 begin
-   Container.tabPaginas.Open('SELECT * FROM Album WHERE Sequencia = '+Seq);
+   Container.tabPaginas.Open('SELECT * FROM Album WHERE Sequencia = '+Seq + ' '+ sql);
    Container.tabPaginas.First;
    Grid.BeginUpdate;
    while not Container.tabPaginas.eof  do begin
-      R := TRectangle.Create(Grid,TAlignLayout.Client);
-      R.Stroke.Color := TAlphaColors.white;
+      R := TRectangle.Create(Grid,TAlignLayout.Client,TAlphaColors.White);
+      R.Stroke.Color := TAlphaColors.Black;
+      R.Sombra;
 
-      R.Top(1).Left(1).Right(1).Bottom(1);
+      R.Top(5).Left(5).Right(5).Bottom(5);
 
       R.XRadius := 5;
       R.YRadius := 5;
@@ -80,9 +96,10 @@ begin
                         12
                         );
       T.Tag :=  Container.tabPaginas.FieldByName('ID').AsInteger;
+      T.TextSettings.FontColor := TAlphaColors.Black;
 
       if Container.tabPaginas.FieldByName('Quantidade').AsInteger = 0 then
-         T.TextSettings.FontColor := TAlphaColors.White
+         T.TextSettings.FontColor := TAlphaColors.Black
       else
          T.TextSettings.FontColor := TAlphaColors.Null;
 
@@ -113,20 +130,29 @@ begin
    ListRectangle := TObjectList<TRectangle>.Create;
 end;
 
-procedure TfrmMain.Grade;
+procedure TfrmMain.Grade(sql :String = '');
 var
-  R :TRectangle;
+  R, R2 :TRectangle;
   T, T2 :TText;
   GridPanelLayout : TGridPanelLayout;
 
 begin
-   Container.tabAlbum.Open('SELECT Album.*, Count(*) Total FROM Album GROUP BY Sequencia');
+   Container.tabAlbum.Open('SELECT Album.*, Count(*) Total FROM Album WHERE 0=0 '+ sql + ' GROUP BY Sequencia');
    Container.tabAlbum.First;
 
    VertScrollBox1.BeginUpdate;
    while not Container.tabAlbum.eof do begin
 
-      R := TRectangle.Create(VertScrollBox1,TAlignLayout.Top);
+      R := TRectangle.Create(VertScrollBox1,TAlignLayout.Top, TAlphaColors.White);
+      //R.Sombra;
+      R.Stroke.Color := TAlphaColors.White;
+      R.ClipChildren := True;
+      R.Padding.Left := 10;
+      R.OnClick := CabecalhoClick;
+
+      R.XRadius := 5;
+      R.YRadius := 5;
+
       ListRectangle.Add(R);
       R.Margins.Top := 10;
 
@@ -134,44 +160,53 @@ begin
                         Container.tabAlbum.FieldByName('Grupo').AsString,
                         TTextAlign.Leading,
                         TTextAlign.Center,
-                        TAlignLayout.Client,
+                        TAlignLayout.Top,
                         16
                         );
-      T.TextSettings.FontColor := TAlphaColors.White;
+      T.TextSettings.FontColor := TAlphaColors.Black;
 
       T.TextSettings.Font.Style := [TFontStyle.fsBold];
 
       if Container.tabAlbum.FieldByName('Total').AsInteger = 20 then begin
         T.Text := Container.tabAlbum.FieldByName('Time').AsString;
 
-        T2 := TText.Create(R,
-                        Container.tabAlbum.FieldByName('Grupo').AsString,
-                        TTextAlign.Leading,
-                        TTextAlign.Center,
-                        TAlignLayout.Right);
-        T2.TextSettings.FontColor := TAlphaColors.White;
+        T2 := TText.Create(T,
+                          Container.tabAlbum.FieldByName('Grupo').AsString,
+                          TTextAlign.Leading,
+                          TTextAlign.Center,
+                          TAlignLayout.Right);
+        T2.TextSettings.FontColor := TAlphaColors.Black;
 
       end;
 
-      R := TRectangle.Create(VertScrollBox1,TAlignLayout.Top);
-      ListRectangle.Add(R);
-
-      if Container.tabAlbum.FieldByName('Total').AsInteger = 8 then begin
-         R.Height := (VertScrollBox1.Width/ 5) * 2;
+      R2 := TRectangle.Create(R,TAlignLayout.Top);
+   
+      if Container.tabAlbum.FieldByName('Total').AsInteger < 5 then begin
+         R2.Height := (VertScrollBox1.Width/ 5) * 1;
+         GridPanelLayout := TGridPanelLayout.Create(R,1,5);
+         R.Tag := 1;
+      end
+      else
+      if (Container.tabAlbum.FieldByName('Total').AsInteger > 5) and
+         (Container.tabAlbum.FieldByName('Total').AsInteger <= 10)then begin
+         R2.Height := (VertScrollBox1.Width/ 5) * 2;
          GridPanelLayout := TGridPanelLayout.Create(R,2,5);
-
-      end else if Container.tabAlbum.FieldByName('Total').AsInteger = 11 then begin
-         R.Height := (VertScrollBox1.Width/ 5) * 3;
+         R.Tag := 2;
+      end else
+      if (Container.tabAlbum.FieldByName('Total').AsInteger > 10) and
+         (Container.tabAlbum.FieldByName('Total').AsInteger <= 15)then begin
+         R2.Height := (VertScrollBox1.Width/ 5) * 3;
          GridPanelLayout := TGridPanelLayout.Create(R,3,5);
-
-      end else if Container.tabAlbum.FieldByName('Total').AsInteger = 20 then begin
-         R.Height := (VertScrollBox1.Width/ 5) * 4;
+         R.Tag := 3;
+      end else if Container.tabAlbum.FieldByName('Total').AsInteger > 15 then begin
+         R2.Height := (VertScrollBox1.Width/ 5) * 4;
          GridPanelLayout := TGridPanelLayout.Create(R,4,5);
+         R.Tag := 4;
       end;
 
-      Figurinha( Container.tabAlbum.FieldByName('Sequencia').AsString,GridPanelLayout);
+      Figurinha( Container.tabAlbum.FieldByName('Sequencia').AsString,GridPanelLayout,sql );
 
-      R.AddObject(GridPanelLayout);
+      R2.AddObject(GridPanelLayout);
       Container.tabAlbum.Next;
 
    end;
