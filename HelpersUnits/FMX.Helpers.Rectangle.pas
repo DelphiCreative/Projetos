@@ -10,17 +10,11 @@ uses
 
 type
   TRectangleHelper = class helper for TRectangle
-     constructor Create(AOwner :TComponent; AlignLayout : TAlignLayout;
-       aColor :TAlphaColor) overload;
 
-     constructor Create(AOwner :TComponent; AlignLayout : TAlignLayout;
-       aHint : string = '' ) overload;
-
-     constructor Create(AOwner :TComponent; aColor :TAlphaColor) overload;
-
-     constructor Create(AOwner :TComponent; aText :AnsiString) overload;
-
-
+     function Top(_size :Single) :TRectangle;
+     function Left(_size :Single) :TRectangle;
+     function Bottom(_size :Single) :TRectangle;
+     function Right(_size :Single) :TRectangle;
      function SizeH(H :Real) :TRectangle; overload;
      function SizeW(H :Real) :TRectangle; overload;
      function TextCenter(aText: String; aFontSize:Single; aFontColor :TAlphaColors):TRectangle; overload;
@@ -28,6 +22,12 @@ type
      procedure LoadFromURL(const aFileName :string);
      procedure Color(aColor :TAlphaColor);
      procedure Sombrear;
+     constructor Create(AOwner :TComponent; AlignLayout : TAlignLayout;
+       aColor :TAlphaColor) overload;
+     constructor Create(AOwner :TComponent; AlignLayout : TAlignLayout;
+       aHint : string = '' ) overload;
+     constructor Create(AOwner :TComponent; aColor :TAlphaColor) overload;
+     constructor Create(AOwner :TComponent; aText :AnsiString) overload;
   end;
 
 implementation
@@ -79,6 +79,12 @@ begin
    HitTest := False;
 end;
 
+function TRectangleHelper.Bottom(_size: Single): TRectangle;
+begin
+   Margins.Bottom := _size;
+   Result := Self;
+end;
+
 procedure TRectangleHelper.Color(aColor: TAlphaColor);
 begin
    Fill.Color := aColor;
@@ -89,6 +95,12 @@ constructor TRectangleHelper.Create(AOwner: TComponent; aText: AnsiString);
 begin
    inherited Create(AOwner);
 
+end;
+
+function TRectangleHelper.Left(_size: Single): TRectangle;
+begin
+   Margins.Left := _size;
+   Result := Self;
 end;
 
 procedure TRectangleHelper.LoadFromFile(const aFileName: string);
@@ -141,6 +153,12 @@ begin
 
 end;
 
+function TRectangleHelper.Right(_size: Single): TRectangle;
+begin
+   Margins.Right := _size;
+   Result := Self;
+end;
+
 function TRectangleHelper.SizeH(H: Real): TRectangle;
 begin
    Self.Height := H;
@@ -171,6 +189,12 @@ begin
   // T := TText.Create(Self,aText,aFontSize,aFontColor,TAlignLayout.Client);
 
 
+end;
+
+function TRectangleHelper.Top(_size: Single): TRectangle;
+begin
+   Margins.Top := _size;
+   Result := Self;
 end;
 
 end.

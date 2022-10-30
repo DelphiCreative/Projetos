@@ -7,19 +7,18 @@ uses
 
 type
    TTextHelper = class helper for TText
-      procedure Center;
-      procedure Bold;
-      function MarginLRTB(L,R,T,B:Single): TText;
-
-      function MarginAll(A : Single): TText;
-      function FundoColor(aFontColor :TAlphaColor):TText;
-
-      constructor Create(AOwner: TComponent;aText :string; aFontSize: Single;
-       aFontColor :TAlphaColor;  AlignLayout : TAlignLayout = TAlignLayout.Top;
+     function MarginLRTB(L,R,T,B:Single): TText;
+     function MarginAll(A : Single): TText;
+     function FundoColor(aFontColor :TAlphaColor):TText;
+     procedure Center;
+     procedure Bold;
+     constructor Create(AOwner: TComponent;aText :string; aFontSize: Single;
+      aFontColor :TAlphaColor;  AlignLayout : TAlignLayout = TAlignLayout.Top;
        TextAlign :TTextAlign = TTextAlign.Center
-       ); overload;
-
-
+      ); overload;
+     constructor Create(AOwner: TComponent;_text :String;
+      _horzAlign :TTextAlign; _vertAlign: TTextAlign; _align:TAlignLayout;
+      _size : Single  = 12) overload;
    end;
 
 implementation
@@ -39,7 +38,18 @@ begin
    TextSettings.HorzAlign := TTextAlign.Center;
    TextSettings.VertAlign := TTextAlign.Center;
    Align := TAlignLayout.Client;
+end;
 
+constructor TTextHelper.Create(AOwner: TComponent; _text: String; _horzAlign,
+  _vertAlign: TTextAlign; _align: TAlignLayout; _size: Single);
+begin
+   Inherited Create(AOwner);
+   TFmxObject(AOwner).AddObject(Self);
+   TextSettings.HorzAlign :=  _horzAlign;
+   TextSettings.VertAlign :=  _vertAlign;
+   Align := _align;
+   Text := _text;
+   Font.Size := _size;
 end;
 
 constructor TTextHelper.Create(AOwner: TComponent; aText: string;
@@ -78,7 +88,6 @@ end;
 function TTextHelper.MarginAll(A: Single): TText;
 begin
   MarginLRTB(A,A,A,A);
-
   Result := Self;
 end;
 

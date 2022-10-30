@@ -14,9 +14,9 @@ uses
 type
   TFDConnectionHelper = class helper for TFDConnection
     public
-      constructor Create(AOwner :TComponent);
       procedure BDBeforeConnect(Sender: TObject);
       procedure BDAfterConnect(Sender: TObject);
+      constructor Create(AOwner :TComponent);
   end;
 
 var
@@ -39,7 +39,6 @@ procedure TFDConnectionHelper.BDBeforeConnect(Sender: TObject);
 begin
    DriverName := 'SQLite';
    Params.Database := TPath.Combine(TPath.GetDocumentsPath,Name+'.db');
-
 end;
 
 constructor TFDConnectionHelper.Create(AOwner: TComponent);

@@ -26,8 +26,6 @@ var
    FocusColor  : TAlphaColor = TAlphaColors.Cornflowerblue;
    UnFocusColor  : TAlphaColor = TAlphaColors.Darkgrey;
 
-
-
 implementation
 
 { TTabControlelper }

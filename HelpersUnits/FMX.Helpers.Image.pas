@@ -10,14 +10,13 @@ uses
 
 type
    TImageHelper = class helper for TImage
-     procedure ImageByName(Name :String);
      function Size(const ASize :Single) :TImage;
      function AddText(aText:String): TImage;
+     procedure ImageByName(Name :String);
      procedure LoadFromURL(const aFileName :string);
      procedure GeraQrCode;
      constructor Create(AOwner :TComponent; ImageName: String ;
-         AlignLayout : TAlignLayout = TAlignLayout.Left) overload;
-
+         AlignLayout : TAlignLayout = TAlignLayout.None) overload;
    end;
 
 type
@@ -48,8 +47,6 @@ begin
    ImageByName(ImageName);
    TFMXObject(AOwner).AddObject(Self);
    Width := Height;
-
-
 end;
 
 procedure TImageHelper.GeraQrCode;

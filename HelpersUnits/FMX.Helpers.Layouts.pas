@@ -7,17 +7,16 @@ uses
 
 type
   TGridPanelLayoutHelper = class helper for TGridPanelLayout
-     constructor Create(AOwner :TComponent;const Row, Col  :Integer); overload;
      procedure CreateGrid(const Row,Col:Integer);
+     constructor Create(AOwner :TComponent;const Row, Col  :Integer); overload;
   end;
 
 type
   TLayoutHelper = class helper for TLayout
-     constructor Create(AOwner :TComponent;AlignLayout : TAlignLayout) overload;
-
      procedure Finish(Sender :TObject);
      procedure AnimaCard(Card :TRectangle); overload;
      procedure AnimaCard(Card :TRectangle; aProperty :String);overload;
+     constructor Create(AOwner :TComponent;AlignLayout : TAlignLayout) overload;
   end;
 
 
