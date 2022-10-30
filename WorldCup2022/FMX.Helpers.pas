@@ -4,6 +4,7 @@ interface
 
 uses
   FMX.Effects,
+  FMX.Graphics, FMX.ImgList, FMX.MultiResBitmap, System.Types,
   FMX.Layouts, FMX.Objects,FMX.Types,System.UITypes, System.Classes;
 
 type
@@ -30,6 +31,15 @@ type
     procedure CreateGrid(const _row,_col:Integer);
   end;
 
+type
+   TImageHelper = class helper for TImage
+     procedure ImageByName(Name :String);
+     constructor Create(AOwner :TComponent; ImageName: String ;
+         AlignLayout : TAlignLayout = TAlignLayout.None) overload;
+   end;
+
+var
+  ImageList :TImageList;
 
 implementation
 
@@ -136,6 +146,28 @@ function TRectangleHelper.Top(_size: Single): TRectangle;
 begin
    Margins.Top := _size;
    Result := Self;
+end;
+
+{ TImageHelper }
+
+constructor TImageHelper.Create(AOwner: TComponent; ImageName: String;
+  AlignLayout: TAlignLayout);
+begin
+  inherited Create(AOwner);
+   Align := AlignLayout;
+   ImageByName(ImageName);
+   TFMXObject(AOwner).AddObject(Self);
+   Width := Height;
+end;
+
+procedure TImageHelper.ImageByName(Name: String);
+var
+   Item : TCustomBitmapItem;
+   Size : TSize;
+begin
+   if ImageList.BitmapItemByName(Name,Item,Size) then
+      Self.Bitmap := Item.MultiResBitmap.Bitmaps[1.0]
+
 end;
 
 end.

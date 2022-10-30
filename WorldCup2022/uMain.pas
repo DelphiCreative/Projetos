@@ -128,6 +128,7 @@ end;
 procedure TfrmMain.FormCreate(Sender: TObject);
 begin
    ListRectangle := TObjectList<TRectangle>.Create;
+   ImageList := Container.ImageList1;
 end;
 
 procedure TfrmMain.Grade(sql :String = '');
@@ -135,9 +136,11 @@ var
   R, R2 :TRectangle;
   T, T2 :TText;
   GridPanelLayout : TGridPanelLayout;
-
+  Icone :TImage;
 begin
-   Container.tabAlbum.Open('SELECT Album.*, Count(*) Total FROM Album WHERE 0=0 '+ sql + ' GROUP BY Sequencia');
+   Container.tabAlbum.Open('SELECT Album.*, '+
+                           ' IIF(Time ="",Grupo, Time) Titulo, '+
+                           ' Count(*) Total FROM Album WHERE 0=0 '+ sql + ' GROUP BY Sequencia');
    Container.tabAlbum.First;
 
    VertScrollBox1.BeginUpdate;
@@ -156,18 +159,25 @@ begin
       ListRectangle.Add(R);
       R.Margins.Top := 10;
 
+      Icone := TImage.Create(R,Container.tabAlbum.FieldByName('Titulo').AsString.ToUpper);
+      Icone.Position.Y := 0;
+      Icone.Position.X := 10;
+      Icone.Width := 40;
+      Icone.Height := 50;
+
+
       T := TText.Create(R,
-                        Container.tabAlbum.FieldByName('Grupo').AsString,
+                        Container.tabAlbum.FieldByName('Titulo').AsString,
                         TTextAlign.Leading,
                         TTextAlign.Center,
                         TAlignLayout.Top,
                         16
                         );
       T.TextSettings.FontColor := TAlphaColors.Black;
-
+      T.Margins.Left := 50;
       T.TextSettings.Font.Style := [TFontStyle.fsBold];
 
-      if Container.tabAlbum.FieldByName('Total').AsInteger = 20 then begin
+      {if Container.tabAlbum.FieldByName('Total').AsInteger = 20 then begin
         T.Text := Container.tabAlbum.FieldByName('Time').AsString;
 
         T2 := TText.Create(T,
@@ -177,7 +187,7 @@ begin
                           TAlignLayout.Right);
         T2.TextSettings.FontColor := TAlphaColors.Black;
 
-      end;
+      end;}
 
       R2 := TRectangle.Create(R,TAlignLayout.Top);
    

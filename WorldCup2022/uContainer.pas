@@ -11,7 +11,7 @@ uses
   FireDAC.Stan.ExprFuncs, FireDAC.Phys.SQLiteWrapper.Stat,
   FireDAC.Phys.SQLiteDef, FireDAC.Phys.SQLite, FireDAC.Comp.Script,
   FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt,
-  FireDAC.Comp.DataSet;
+  FireDAC.Comp.DataSet, System.ImageList, FMX.ImgList;
 
 type
   TFDConnectionHelper = class helper for TFDConnection
@@ -27,6 +27,7 @@ type
     FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink;
     tabAlbum: TFDQuery;
     tabPaginas: TFDQuery;
+    ImageList1: TImageList;
     procedure SQLiteBeforeConnect(Sender: TObject);
     procedure DataModuleCreate(Sender: TObject);
     procedure SQLiteAfterConnect(Sender: TObject);
