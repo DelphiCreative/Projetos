@@ -11,30 +11,40 @@ uses
 type
   TRectangleHelper = class helper for TRectangle
 
-     function Top(_size :Single) :TRectangle;
-     function Left(_size :Single) :TRectangle;
-     function Bottom(_size :Single) :TRectangle;
-     function Right(_size :Single) :TRectangle;
+     function Top(ASize :Single) :TRectangle;
+     function Left(ASize :Single) :TRectangle;
+     function Bottom(ASize :Single) :TRectangle;
+     function Right(ASize :Single) :TRectangle;
+     function MarginAll(ASize :Single):TRectangle; overload;
+     function PaddingAll(ASize :Single):TRectangle; overload;
      function SizeH(H :Real) :TRectangle; overload;
      function SizeW(H :Real) :TRectangle; overload;
-     function TextCenter(aText: String; aFontSize:Single; aFontColor :TAlphaColors):TRectangle; overload;
+     function PositionXY(APositionX,APositionY :Single) :TRectangle;
+
      procedure LoadFromFile(const aFileName :string);
      procedure LoadFromURL(const aFileName :string);
      procedure Color(aColor :TAlphaColor);
      procedure Sombrear;
+
+
      constructor Create(AOwner :TComponent; AlignLayout : TAlignLayout;
        aColor :TAlphaColor) overload;
+
      constructor Create(AOwner :TComponent; AlignLayout : TAlignLayout;
        aHint : string = '' ) overload;
+
      constructor Create(AOwner :TComponent; aColor :TAlphaColor) overload;
-     constructor Create(AOwner :TComponent; aText :AnsiString) overload;
+
+     constructor Create(AOwner :TComponent; aText :String;
+        aFontSize:Single; aFontColor,ABackgroundColor :TAlphaColor) overload;
+
   end;
 
 implementation
 
 uses
 
-System.IOUtils, FMX.Helpers.Text;
+System.IOUtils, FMX.Helpers.Text, FMX.Helpers.Image;
 { TRectangleHelper }
 
 constructor TRectangleHelper.Create(AOwner: TComponent;
@@ -79,9 +89,9 @@ begin
    HitTest := False;
 end;
 
-function TRectangleHelper.Bottom(_size: Single): TRectangle;
+function TRectangleHelper.Bottom(ASize: Single): TRectangle;
 begin
-   Margins.Bottom := _size;
+   Margins.Bottom := ASize;
    Result := Self;
 end;
 
@@ -91,15 +101,39 @@ begin
    Stroke.Color := aColor;
 end;
 
-constructor TRectangleHelper.Create(AOwner: TComponent; aText: AnsiString);
+constructor TRectangleHelper.Create(AOwner :TComponent; aText :String;
+  aFontSize:Single; aFontColor,ABackgroundColor :TAlphaColor) overload;
+var T :TText;
+    Icone :TImage;
 begin
-   inherited Create(AOwner);
+  inherited Create(AOwner);
+  TFMXObject(AOwner).AddObject(Self);
+  Fill.Color := ABackgroundColor;
+  Stroke.Color := Fill.Color;
+
+  T := TText.Create(Self);
+  T.Text := aText;
+  T.Align := TAlignLayout.Center;
+  T.TextSettings.FontColor := aFontColor;
+  T.TextSettings.Font.Size := aFontSize ;
+  T.Width := 1000;
+  T.AutoSize := True;
+  //  R.AddObject(T);
+  Height := T.Height + 50;
+  Width := T.Width + 50;
+
+  Icone := TImage.Create(Self,aText,
+                         TAlignLayout.Client);
+  Icone.WrapMode := TImageWrapMode.Center;
+
+  AddObject(T);
+  AddObject(Icone);
 
 end;
 
-function TRectangleHelper.Left(_size: Single): TRectangle;
+function TRectangleHelper.Left(ASize: Single): TRectangle;
 begin
-   Margins.Left := _size;
+   Margins.Left := ASize;
    Result := Self;
 end;
 
@@ -153,20 +187,45 @@ begin
 
 end;
 
-function TRectangleHelper.Right(_size: Single): TRectangle;
+function TRectangleHelper.MarginAll(ASize: Single): TRectangle;
 begin
-   Margins.Right := _size;
+   Right(ASize).Top(ASize).Left(ASize).Right(ASize);
+   Result := Self;
+end;
+
+function TRectangleHelper.PaddingAll(ASize: Single): TRectangle;
+begin
+   Padding.Top := ASize;
+   Padding.Left := ASize;
+   Padding.Right := ASize;
+   Padding.Bottom := ASize;
+   Result := Self;
+end;
+
+function TRectangleHelper.PositionXY(APositionX,
+  APositionY: Single): TRectangle;
+begin
+   Position.X := APositionX;
+   Position.Y := APositionY;
+   Result := Self;
+end;
+
+function TRectangleHelper.Right(ASize: Single): TRectangle;
+begin
+   Margins.Right := ASize;
    Result := Self;
 end;
 
 function TRectangleHelper.SizeH(H: Real): TRectangle;
 begin
    Self.Height := H;
+   Result := Self;
 end;
 
 function TRectangleHelper.SizeW(H: Real): TRectangle;
 begin
    Self.Width := H;
+   Result := Self;
 end;
 
 procedure TRectangleHelper.Sombrear;
@@ -182,18 +241,9 @@ begin
    Sombra.ShadowColor := TAlphaColorRec.Black;
 end;
 
-function TRectangleHelper.TextCenter(aText: String; aFontSize:Single;
-  aFontColor :TAlphaColors):TRectangle;
-var T :TText;
+function TRectangleHelper.Top(ASize: Single): TRectangle;
 begin
-  // T := TText.Create(Self,aText,aFontSize,aFontColor,TAlignLayout.Client);
-
-
-end;
-
-function TRectangleHelper.Top(_size: Single): TRectangle;
-begin
-   Margins.Top := _size;
+   Margins.Top := ASize;
    Result := Self;
 end;
 

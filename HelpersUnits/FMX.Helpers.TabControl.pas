@@ -77,7 +77,7 @@ begin
 
       Icone := TImage.Create(Fundo);
       Icone.ImageByName(IntToStr(I));
-      Icone.Height := 30;
+      Icone.Height := 20;
       Icone.Tag := I;
       Icone.HitTest := False;
       Icone.Width := Icone.Height;
@@ -94,7 +94,7 @@ begin
       Text.TextSettings.HorzAlign := TTextAlign.Center;
       Text.Height := 20;
       Text.Align := Align;
-      Text.Visible := False;
+      Text.Visible := True;
       ListText.Add(Text);
 
       Text.TextSettings.Font.Size := 10;
@@ -134,6 +134,7 @@ procedure TTabControlelper.BotaoClick(Sender: TObject);
 var I :Integer;
 begin
 
+   Self.BeginUpdate;
    Self.Tag := TRectangle(Sender).Tag ;
    Self.GotoVisibleTab(Self.Tag ,TTabTransition.Slide);
    {ListFoco[Self.Tag].Fill.Color := BarColor;
@@ -153,12 +154,16 @@ begin
          ListIcone[I].Bitmap.ReplaceOpaqueColor(UnFocusColor);
       end;
    end; }
+   Self.EndUpdate;
 
 end;
 
 procedure TTabControlelper.TabControlChange(Sender: TObject);
-var I :Integer;
+var
+   I :Integer;
 begin
+
+   Self.BeginUpdate;
 
    ListFoco[Self.TabIndex].Fill.Color := BarColor;
    ListText[Self.TabIndex].TextSettings.FontColor := UnFocusColor;
@@ -178,14 +183,12 @@ begin
       end;
    end;
 
-
+   Self.EndUpdate;
 end;
 
 initialization
    ListFoco := TObjectList<TRectangle>.Create;
    ListIcone := TObjectList<TImage>.Create;
    ListText := TObjectList<TText>.Create;
-
-
 
 end.

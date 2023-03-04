@@ -12,6 +12,10 @@ type
      function FundoColor(aFontColor :TAlphaColor):TText;
      procedure Center;
      procedure Bold;
+
+     constructor Create(AOwner: TComponent; AText: String; ASize: Single;
+       AFontColor: TAlphaColor; AHorzAlign , AVertAlign: TTextAlign; AAlign: TAlignLayout);overload;
+
      constructor Create(AOwner: TComponent;aText :string; aFontSize: Single;
       aFontColor :TAlphaColor;  AlignLayout : TAlignLayout = TAlignLayout.Top;
        TextAlign :TTextAlign = TTextAlign.Center
@@ -38,6 +42,21 @@ begin
    TextSettings.HorzAlign := TTextAlign.Center;
    TextSettings.VertAlign := TTextAlign.Center;
    Align := TAlignLayout.Client;
+end;
+
+
+
+constructor TTextHelper.Create(AOwner: TComponent; AText: String; ASize: Single;
+   AFontColor: TAlphaColor; AHorzAlign , AVertAlign: TTextAlign; AAlign: TAlignLayout);
+begin
+   Inherited Create(AOwner);
+   TFmxObject(AOwner).AddObject(Self);
+   Text :=  AText;
+   Font.Size := ASize;
+   TextSettings.FontColor := AFontColor;
+   TextSettings.VertAlign := AVertAlign;
+   TextSettings.HorzAlign := AHorzAlign;
+   Align := AAlign;
 end;
 
 constructor TTextHelper.Create(AOwner: TComponent; _text: String; _horzAlign,
@@ -71,7 +90,7 @@ begin
   Position.Y := Self.Height * Self.ControlsCount;
   HitTest := False;
 
-  if TextAlign =  TTextAlign.Center then
+  if TextAlign = TTextAlign.Center then
      Center
   else
       TextSettings.HorzAlign := TextAlign;

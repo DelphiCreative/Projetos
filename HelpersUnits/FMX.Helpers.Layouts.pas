@@ -5,6 +5,7 @@ interface
 uses
    System.Classes,FMX.Controls, FMX.Ani, FMX.Layouts, FMX.Objects, FMX.Types;
 
+
 type
   TGridPanelLayoutHelper = class helper for TGridPanelLayout
      procedure CreateGrid(const Row,Col:Integer);
@@ -168,12 +169,12 @@ begin
    Align := AlignLayout;
    TFMXObject(AOwner).AddObject(Self);
 
-   if  TControl(AOwner).Height <= TControl(AOwner).Width then
-       Self.Height := TControl(AOwner).Height
-   else
-       Self.Height := TControl(AOwner).Width;
+//   if  TControl(AOwner).Height <= TControl(AOwner).Width then
+//       Self.Height := TControl(AOwner).Height
+//   else
+//       Self.Height := TControl(AOwner).Width;
 
-   Self.Width := Self.Height;
+//   Self.Width := Self.Height;
 
 
 end;
