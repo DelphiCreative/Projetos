@@ -2,11 +2,11 @@
 
 <b>Dinheiro Contado - Controle de Contas em Delphi</b>
 
-Descrição
+<b>Descrição</b>
 
 O Dinheiro Contado é um aplicativo de controle de contas desenvolvido em Delphi, que permite aos usuários gerenciar suas finanças pessoais de forma simples e eficiente. Com uma interface intuitiva e amigável, o aplicativo possibilita o registro de receitas, despesas e categorias relacionadas, fornecendo uma visão clara do fluxo financeiro.
 
-Recursos Principais
+<b>Recursos Principais:</b>
 
 Registro de Receitas: Cadastre suas fontes de renda e mantenha um controle preciso do dinheiro que entra em sua conta.
 
