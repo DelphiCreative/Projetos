@@ -1137,7 +1137,7 @@ begin
                      IfThen(txtTipoMovimento.Tag = 0,'R','D')+
                     '" ORDER BY Descricao',edtCategoria.Name )
   else
-     SelectCategorias('SELECT Categorias.*, True AS Categoria FROM Categorias ORDER BY Descricao',edtEditCategoria.Name)
+     SelectCategorias('SELECT Categorias.*, CASE WHEN Icone IS NOT NULL THEN Icone ELSE Descricao END AS Img  FROM Categorias ORDER BY Descricao',edtEditCategoria.Name)
 
 end;
 
