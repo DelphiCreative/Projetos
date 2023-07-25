@@ -8,25 +8,25 @@ O Dinheiro Contado é um aplicativo de controle de contas desenvolvido em Delphi
 
 <b>Recursos Principais:</b>
 
-Registro de Receitas: Cadastre suas fontes de renda e mantenha um controle preciso do dinheiro que entra em sua conta.
+<b>Registro de Receitas:</b> Cadastre suas fontes de renda e mantenha um controle preciso do dinheiro que entra em sua conta.
 
-Registro de Despesas: Gerencie suas despesas diárias, como compras, contas e gastos diversos.
+<b>Registro de Despesas:</b> Gerencie suas despesas diárias, como compras, contas e gastos diversos.
 
-Categorias Personalizadas: Crie categorias personalizadas para melhor organizar suas transações financeiras.
+<b>Categorias Personalizadas:</b> Crie categorias personalizadas para melhor organizar suas transações financeiras.
 
-Interface Intuitiva: Uma interface limpa e intuitiva facilita a navegação e o uso do aplicativo.
+<b>Interface Intuitiva:</b> Uma interface limpa e intuitiva facilita a navegação e o uso do aplicativo.
 
-Gráficos: Visualize gráficos para acompanhar seu progresso financeiro ao longo do tempo.
+<b>Gráficos:</b> Visualize gráficos para acompanhar seu progresso financeiro ao longo do tempo.
 
-Instalação
+<b>Instalação</b>
 
-O Dinheiro Contado está disponível para download na Play Store. Basta acessar https://play.google.com/store/apps/details?id=com.DinheiroContado e instalar o aplicativo em seu dispositivo Android.
+O <b>Dinheiro Contado</b> está disponível para download na Play Store. Basta acessar https://play.google.com/store/apps/details?id=com.DinheiroContado e instalar o aplicativo em seu dispositivo Android.
 
 Contribuindo
 
-Contribuições são bem-vindas! Se você encontrar problemas, bugs ou tiver sugestões para melhorias, fique à vontade para abrir uma issue ou enviar um pull request.
+Contribuições são bem-vindas! Se você encontrar problemas, bugs ou tiver sugestões para melhorias.
 
-Contato
+<b>Contato</b>
 
 Se você tiver alguma dúvida ou quiser entrar em contato, sinta-se à vontade para enviar um e-mail para diegocataneo@outlook.com.
 
