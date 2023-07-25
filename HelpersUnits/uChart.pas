@@ -34,31 +34,28 @@ type
       Color :TAlphaColor = TAlPhaColors.White;Estilo :Integer = 1 ); overload;
    procedure ChartCalendario(Data: TDate; Valores: TDataSet); overload;
 
-
    function Top(_size :Single) :TRectangle;
-     function Left(_size :Single) :TRectangle;
-     function Bottom(_size :Single) :TRectangle;
-     function Right(_size :Single) :TRectangle;
-     function MarginAll(_size :Single):TRectangle; overload;
-     function PaddingAll(_size :Single):TRectangle; overload;
-     function SizeH(H :Real) :TRectangle; overload;
-     function SizeW(H :Real) :TRectangle; overload;
-     function PositionXY(APositionX,APositionY :Single) :TRectangle;
+   function Left(_size :Single) :TRectangle;
+   function Bottom(_size :Single) :TRectangle;
+   function Right(_size :Single) :TRectangle;
+   function MarginAll(_size :Single):TRectangle; overload;
+   function PaddingAll(_size :Single):TRectangle; overload;
+   function SizeH(H :Real) :TRectangle; overload;
+   function SizeW(H :Real) :TRectangle; overload;
+   function PositionXY(APositionX,APositionY :Single) :TRectangle;
 
-     function TextCenter(aText: String; aFontSize:Single; aFontColor :TAlphaColor):TRectangle; overload;
-     procedure LoadFromFile(const aFileName :string);
-     procedure LoadFromURL(const aFileName :string);
-     procedure Color(aColor :TAlphaColor);
-     procedure Sombrear;
-     constructor Create(AOwner :TComponent; AlignLayout : TAlignLayout;
+   function TextCenter(aText: String; aFontSize:Single; aFontColor :TAlphaColor):TRectangle; overload;
+   procedure LoadFromFile(const aFileName :string);
+   procedure LoadFromURL(const aFileName :string);
+   procedure Color(aColor :TAlphaColor);
+   procedure Sombrear;
+   constructor Create(AOwner :TComponent; AlignLayout : TAlignLayout;
        aColor :TAlphaColor) overload;
-     constructor Create(AOwner :TComponent; AlignLayout : TAlignLayout;
+   constructor Create(AOwner :TComponent; AlignLayout : TAlignLayout;
        aHint : string = '' ) overload;
-     constructor Create(AOwner :TComponent; aColor :TAlphaColor) overload;
-     constructor Create(AOwner :TComponent; aText :AnsiString;
+   constructor Create(AOwner :TComponent; aColor :TAlphaColor) overload;
+   constructor Create(AOwner :TComponent; aText :AnsiString;
      aFontSize:Single; aFontColor,ABackgroundColor :TAlphaColor) overload;
-
-
 end;
 
 type
@@ -525,8 +522,6 @@ begin
    Shaddow.Opacity := 0.1;
    Shaddow.ShadowColor := TAlphaColors.Black;
    Shaddow.Parent := CalloutRectangle;
-
-
 
 end;
 
@@ -998,10 +993,7 @@ end;
 
 function TRectangleHelper.PaddingAll(_size: Single): TRectangle;
 begin
-   Padding.Top := _size;
-   Padding.Left := _size;
-   Padding.Right := _size;
-   Padding.Bottom := _size;
+   Padding.Rect := TRectF.Create(_size,_size,_size,_size);
    Result := Self;
 end;
 
@@ -1054,17 +1046,8 @@ begin
   T.TextSettings.Font.Size := aFontSize ;
   T.Width := 1000;
   T.AutoSize := True;
-
-//  R := TRectangle.Create(FlowLayout1);
-//  R.AddObject(T);
   Height := T.Height + 10;
   Width := T.Width + 10;
-
-
-
-
-  // ;
-
 
 end;
 
