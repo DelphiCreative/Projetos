@@ -3,7 +3,7 @@ program DinheiroContado;
 uses
   System.StartUpCopy,
   FMX.Forms,
-  Skia.FMX,
+  FMX.Skia,
   uMain in 'uMain.pas' {fMain},
   uContainer in 'uContainer.pas' {Container: TDataModule},
   uContas in 'uContas.pas',
@@ -17,7 +17,8 @@ uses
   FMX.Helpers.Text in '..\HelpersUnits\FMX.Helpers.Text.pas',
   FMX.Helpers.Shape in '..\HelpersUnits\FMX.Helpers.Shape.pas',
   FMX.Helpers in '..\HelpersUnits\FMX.Helpers.pas',
-  uChart in '..\HelpersUnits\uChart.pas';
+  uChart in '..\HelpersUnits\uChart.pas',
+  uItemHome in 'uItemHome.pas' {fraItemHome: TFrame};
 
 {$R *.res}
 

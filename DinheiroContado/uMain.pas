@@ -13,8 +13,8 @@ uses
   FMX.StdCtrls, FMX.Controls.Presentation, FMX.ScrollBox, FMX.Memo, FMX.Layouts,
   FMX.Objects, FMX.TabControl, FMX.Edit, FMX.Colors, System.ImageList,
   FMX.ImgList, FMX.Calendar, FMX.DateTimeCtrls, FMX.Effects, System.Actions,
-  FMX.ActnList, FMX.MultiView, FMX.StdActns, FMX.MediaLibrary.Actions, Skia,
-  Skia.FMX;
+  FMX.ActnList, FMX.MultiView, FMX.StdActns, FMX.MediaLibrary.Actions, System.Skia,
+  FMX.Skia;
 
 type
   THelperForm = class helper for TForm
@@ -141,7 +141,6 @@ type
     btnAdicionar: TSpeedButton;
     shaAdicionar: TShadowEffect;
     Layout3: TLayout;
-    StyleBook1: TStyleBook;
     Rectangle35: TRectangle;
     SkLabel2: TSkLabel;
     skSaldo: TSkLabel;
@@ -228,6 +227,8 @@ type
     btnCustomize: TSpeedButton;
     ShadowEffect4: TShadowEffect;
     ShadowEffect8: TShadowEffect;
+    tbiConsulta: TTabItem;
+    VertScrollBox2: TVertScrollBox;
     procedure layMesClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure btnProximoClick(Sender: TObject);
@@ -338,7 +339,9 @@ uses
   System.IOUtils,
   uContainer, FMX.Helpers.Layouts, FMX.Helpers.Text,
   FMX.Functions, FMX.Helpers.Image, FMX.Helpers.FloatAnimation, uContas,
-   uCards, uSettings, Chart4Delphi,  uChart;
+   uCards, uSettings, Chart4Delphi,
+   uChart,
+   fraItemHome, uItemHome;
 
 var
    LayoutPrincipal : TControl;
@@ -479,7 +482,7 @@ end;
 
 procedure TfMain.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-   FormList.Free;
+   FrameList.Free;
    ListIcones.Free;
    ListCores.Free;
 end;
@@ -488,6 +491,8 @@ procedure TfMain.FormCreate(Sender: TObject);
 begin
 
    StatusBarColor(rctTopo.Fill.Color);
+   fMain.Fill.Color := rctTopo.Fill.Color;
+
    ImageList := ImageList1;
    imgMultiSelecao.ImageByName('ACEITAR');
 
@@ -580,6 +585,7 @@ end;
 
 
 procedure TfMain.IconeEditarClick(Sender: TObject);
+var sql :String;
 begin
    Container.tabContas.Open(Container.FDScript2.SQL(0) + ' AND P.ID ='+ TImage(Sender).Tag.ToString);
 
@@ -602,10 +608,13 @@ begin
       txtTipoMovimento.Text := 'Receita';
       txtTipoMovimento.Tag := 0;
       StatusBarColor([rctReceitaDespesa,rctBotaoSalvar], ColorReceber);
+      fMain.Fill.Color := ColorReceber;
+
    end else begin
       txtTipoMovimento.Text := 'Despesa';
       txtTipoMovimento.Tag := 1;
       StatusBarColor([rctReceitaDespesa,rctBotaoSalvar], ColorPagar);
+      fMain.Fill.Color := ColorPagar;
    end;
 
    edtValorPago.Text :=  edtValorPAgo.Hint;
@@ -613,6 +622,8 @@ begin
    btnExcluirMovimento.Tag := TImage(Sender).Tag;
    btnExcluirMovimento.OnClick := IconeExcluirClick;
    btnExcluirMovimento.Visible := True;
+
+   Container.tabContas.Open(Container.FDScript2.SQL(0) + ' AND P.ID_Conta = '+ Container.tabContas.FieldByName('ID_Conta').AsString);
 
    TabControl1.GotoVisibleTab(1)
 end;
@@ -640,114 +651,57 @@ end;
 procedure TfMain.ListarContas(ASimples: Boolean = False);
 var
    I : Integer;
-   layPrincipal: TLayout;
+   layMain: TLayout;
    Anima : TFloatAnimation;
-   rCard, Valor :TRectangle;
+   rctItem :TRectangle;
    Color :TAlphaColor;
    strIcone : string;
+
+   Item : TfraItemHome;
+
 begin
 
    I := 0;
    LimparLista;
-   FormList.Clear;
+   FrameList.Clear;
    Container.tabLista.First;
+   vsbListaMensal.BeginUpdate;
    while not  Container.tabLista.Eof do begin
-      layPrincipal            := TLayout.Create(vsbListaMensal);
-      layPrincipal.Height := 70;
+      layMain := TLayout.Create(vsbListaMensal);
+      layMain.Height := 70;
+      layMain.Position.X := 0;
+      layMain.Width := Self.Width;
+      layMain.Tag := I;
+      layMain.Align := TAlignLayout.Top;
+      ListContas.Add(layMain);
 
-      layPrincipal.Position.X := 0;
-      layPrincipal.Width      := vsbListaMensal.Width;
-      layPrincipal.Tag        := I;
-      layPrincipal.Align := TAlignLayout.Top;
-      ListContas.Add(layPrincipal);
+      vsbListaMensal.AddObject(layMain);
 
-      vsbListaMensal.AddObject(layPrincipal);
+      rctItem := TRectangle.Create(layMain);
+      rctItem.Fill.Color   := TAlphaColorRec.Null;
+      rctItem.Stroke.Color   := TAlphaColorRec.Darkgray;
+      rctItem.PositionXY(layMain.Width *(I+1),2);
+      rctItem.Width := layMain.Width - 20;
+      rctItem.Height := layMain.Height - 4;
+      rctItem.Tag := I;
+      rctItem.MarginAll(2);
+      rctItem.Padding.Rect := TRectF.Create(0,0,5,0);
+      rctItem.Sombrear;
+      layMain.AddObject(rctItem);
 
-      rCard := TRectangle.Create(layPrincipal);
-      rCard.Fill.Color     := TAlphaColorRec.Null;
-      rCard.Stroke.Color   := TAlphaColorRec.Darkgray;
-      rCard.PositionXY(layPrincipal.Width *(I+1),2);
-      rCard.Width          := layPrincipal.Width - 20;
-      rCard.Height         := layPrincipal.Height - 4;
-      rCard.Tag            := I;
-      rCard.MarginAll(2);
-      rCard.PaddingAll(0);
-      rCard.Padding.Right := 5;
-      rCard.Sombrear;
-      layPrincipal.AddObject(rCard);
+      Anima := TFloatAnimation.Create(rctItem,0.3,rctItem.Width ,10, True, 'Position.X', 0);
 
-      Anima := TFloatAnimation.Create(rCard,0.3,rCard.Width ,10, True, 'Position.X', 0);
-
-      if Container.tabLista.FieldByName('TipoMovimento').AsString = 'R' then
-         Color     := TAlphaColorRec.Green
-      else
-         Color     := TAlphaColorRec.Tomato;
-
-      Color := TAlphaColors.White;
-      FCard := TFCard.Create(Self);
-      rCard.AddObject(FCard.Rectangle1);
-
-      if Container.tabLista.FieldByName('IconeCor').AsString <> '' then begin
-         FCard.Circle1.Fill.Color := StringToAlphaColor('$'+ Container.tabLista.FieldByName('IconeCor').AsString);
-         if FCard.Circle1.Fill.Color <> Colors[0] then
-            FCard.RoundRect2.Fill.Color := FCard.Circle1.Fill.Color;
-      end;
-
-
-      FCard.txtDescricao.Text := Container.tabLista.FieldByName('Descricao').AsString;
-      FCard.txtValor.Text := Container.tabLista.FieldByName('Valor').AsString;
-
-      if Container.tabLista.FieldByName('Icone').AsString.ToUpper = '' then
-         strIcone := Container.tabLista.FieldByName('Categoria').AsString.ToUpper
-      else
-         strIcone := Container.tabLista.FieldByName('Icone').AsString.ToUpper;
-
-      FCard.imgIcone.ImageByName(strIcone);
-      FCard.imgIcone.Hint := strIcone;
-      FCard.imgIcone.Tag := 0;
-
-
-      FCard.imgEditar.Tag := Container.tabLista.FieldByName('ID').AsInteger;
-      FCard.imgEditar.OnClick := IconeEditarClick;
-
-      FCard.Image1.Tag := Container.tabLista.FieldByName('ID').AsInteger;
-      FCard.Image1.OnClick := IconeExcluirClick;
-
-      FCard.Image2.ImageByName(Container.tabLista.FieldByName('Status').AsString.ToUpper);
-      FCard.Image2.Tag := Container.tabLista.FieldByName('ID').AsInteger;
-      FCard.Image2.OnClick := IconeClick;
-
-      FCard.RoundRect2.Width := (FCard.RoundRect1.Width / 100) * Container.tabLista.FieldByName('PorcentagemPaga').AsFloat;
-
-      if Container.tabLista.FieldByName('TipoMovimento').AsString = 'R' then
-         Color := ColorReceber
-      else
-         Color := ColorPagar	;
-
-      Valor := TRectangle.Create(FCard.Layout4, Container.tabLista.FieldByName('Categoria').AsString, 8, TAlphaColors.White, Color);//TTextAlign.Trailing);
-      Valor.Align := TAlignLayout.Left;
-      Valor.Margins.Right := 5;
-      Valor.Margins.Top := 5;
-      Valor.YRadius := 5;
-      Valor.XRadius := 5;
-      Valor.Sombrear;
-
-      if Container.tabLista.FieldByName('Subcategoria').AsString <> '' then begin
-         Valor := TRectangle.Create(FCard.Layout4, Container.tabLista.FieldByName('Subcategoria').AsString, 8, TAlphaColors.White,Color);//TTextAlign.Trailing);
-         Valor.Margins.Left := 5;
-         Valor.Margins.Top := 5;
-         Valor.Align := TAlignLayout.Left;
-         Valor.YRadius := 5;
-         Valor.XRadius := 5;
-         Valor.Sombrear;
-      end;
+      Item := TfraItemHome.Create(Self, Container.tabLista);
+      Item.Name := 'f'+Container.tabLista.FieldByName('ID').AsString;
+      Item.imgEditar.OnClick := IconeEditarClick;
+      rctItem.AddObject(Item.Rectangle1);
 
       Anima.Tag := I;
       Anima.Interpolation := TInterpolationType.Linear;
 
-      rCard.AddObject(Anima);
+      rctItem.AddObject(Anima);
 
-      FormList.Add(FCard);
+      FrameList.Add(Item);
       ListaAnima.Add(Anima);
       Anima.Start;
 
@@ -755,7 +709,7 @@ begin
 
       Container.tabLista.Next
    end;
-
+   vsbListaMensal.EndUpdate;
    CardsCategoria;
 end;
 
@@ -794,13 +748,13 @@ var
 begin
 
    strIDs := TStringBuilder.Create;
-   for I := 0 to FormList.Count - 1 do begin
+   for I := 0 to FrameList.Count - 1 do begin
 
-      img := TImage(FormList.Items[I].FindComponent('imgIcone'));
+      img := TImage(FrameList.Items[I].FindComponent('imgIcone'));
 
       if img.Tag = 1 then begin
-          imgEditar := TImage(FormList.Items[I].FindComponent('imgEditar'));
-          txtValor := TSkLabel	(FormList.Items[I].FindComponent('txtValor'));
+          imgEditar := TImage(FrameList.Items[I].FindComponent('imgEditar'));
+          txtValor := TSkLabel	(FrameList.Items[I].FindComponent('txtValor'));
           valor := valor + StrtoFloat(txtValor.Text.Replace('R$','').Replace(' ',''));
           strIDs.Append(IntTostr(imgEditar.Tag)+',');
       end;
@@ -1718,7 +1672,7 @@ begin
    rctFundoWhite.Position.Y := layClient.Size.Height;
    rctFundoWhite.Size.Width := layClient.Size.Width;
    rctFundoWhite.Corners := [];
-   rctFundoWhite.Size.Height :=  layClient.Size.Height - (layClient.Size.Height/3) ;
+   rctFundoWhite.Size.Height :=  layClient.Size.Height;// - (layClient.Size.Height/3) ;
    rctFundoWhite.Size.PlatformDefault := False;
    rctFundoWhite.Stroke.Color := TAlphaColors.White;
    rctFundoWhite.Padding.Rect := TRect.Create(10,10,10,0);
@@ -1728,7 +1682,7 @@ begin
 
    Self.AddObject(layClient);
 
-   AnimaEntrada := TFloatAnimation.Create(rctFundoWhite,0.2,0,layClient.Height - rctFundoWhite.Height, True, 'Position.Y', 0);
+   AnimaEntrada := TFloatAnimation.Create(rctFundoWhite,0.2,0,0 { layClient.Height - rctFundoWhite.Height}, True, 'Position.Y', 0);
 
    ListAnimaEntrada.Add(AnimaEntrada);
 

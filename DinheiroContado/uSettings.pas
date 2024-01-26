@@ -3,7 +3,9 @@ unit uSettings;
 interface
 
 uses
-  System.UITypes, System.Generics.Collections, FMX.Objects, FMX.Layouts, FMX.Ani, FMX.Forms;
+  System.UITypes, System.Generics.Collections, FMX.Objects, FMX.Graphics, FMX.Layouts, FMX.Ani, FMX.Forms;
+
+
 
 const
    PastaCategoria = 'Categorias';
@@ -69,11 +71,13 @@ var
    ListaAnima,
    ListAnimaEntrada,
    ListAnimaSaida : TObjectList<TFloatAnimation>;
-   FormList :  TObjectList<TForm>;
+   FrameList :  TObjectList<TFrame>;
    ListIcones, ListCores : TObjectList<TCircle>;
 
 
 implementation
+
+
 
 initialization
 
@@ -104,8 +108,8 @@ initialization
    ListCores := TObjectList<TCircle>.Create;
    ListCores.OwnsObjects := True;
 
-   FormList :=  TObjectList<TForm>.Create;
-   FormList.OwnsObjects := True;
+   FrameList :=  TObjectList<TFrame>.Create;
+   FrameList.OwnsObjects := True;
 
 
 

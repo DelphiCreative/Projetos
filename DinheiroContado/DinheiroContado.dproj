@@ -4,7 +4,7 @@
         <ProjectVersion>19.5</ProjectVersion>
         <FrameworkType>FMX</FrameworkType>
         <Base>True</Base>
-        <Config Condition="'$(Config)'==''">Release</Config>
+        <Config Condition="'$(Config)'==''">Debug</Config>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <TargetedPlatforms>32787</TargetedPlatforms>
         <AppType>Application</AppType>
@@ -244,17 +244,14 @@
         </DelphiCompile>
         <DCCReference Include="uMain.pas">
             <Form>fMain</Form>
-            <FormType>fmx</FormType>
         </DCCReference>
         <DCCReference Include="uContainer.pas">
             <Form>Container</Form>
-            <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="uContas.pas"/>
         <DCCReference Include="uCards.pas">
             <Form>FCard</Form>
-            <FormType>fmx</FormType>
         </DCCReference>
         <DCCReference Include="uSettings.pas"/>
         <DCCReference Include="..\HelpersUnits\Chart4Delphi.pas"/>
@@ -266,6 +263,11 @@
         <DCCReference Include="..\HelpersUnits\FMX.Helpers.Shape.pas"/>
         <DCCReference Include="..\HelpersUnits\FMX.Helpers.pas"/>
         <DCCReference Include="..\HelpersUnits\uChart.pas"/>
+        <DCCReference Include="uItemHome.pas">
+            <Form>fraItemHome</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -792,6 +794,16 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="$(NDKBasePath)\prebuilt\android-arm\gdbserver\gdbserver" Configuration="Debug" Class="AndroidGDBServer">
+                    <Platform Name="Android">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(NDKBasePath)\prebuilt\android-arm\gdbserver\gdbserver" Configuration="Release" Class="AndroidGDBServer">
+                    <Platform Name="Android">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile Condition="'$(SKIADIR)'!=''" Required="true" LocalName="$(SKIADIR)\Binary\Shared\Android64\libsk4d.so" Configuration="Debug" Class="Skia">
                     <Platform Name="Android64">
                         <RemoteDir>library\lib\arm64-v8a\</RemoteDir>
@@ -981,12 +993,6 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="Android\Debug\libDinheiroContado.so" Configuration="Debug" Class="ProjectOutput_Android32">
-                    <Platform Name="Android64">
-                        <RemoteName>libDinheiroContado.so</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
                 <DeployFile LocalName="Android\Debug\splash_image_def.xml" Configuration="Debug" Class="AndroidSplashImageDef">
                     <Platform Name="Android">
                         <Overwrite>true</Overwrite>
@@ -1026,12 +1032,6 @@
                 </DeployFile>
                 <DeployFile LocalName="Android\Release\libDinheiroContado.so" Configuration="Release" Class="ProjectOutput">
                     <Platform Name="Android">
-                        <RemoteName>libDinheiroContado.so</RemoteName>
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName="Android\Release\libDinheiroContado.so" Configuration="Release" Class="ProjectOutput_Android32">
-                    <Platform Name="Android64">
                         <RemoteName>libDinheiroContado.so</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>

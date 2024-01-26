@@ -300,6 +300,7 @@ object Container: TContainer
         SQL.Strings = (
           'SELECT '
           '  P.ID, '
+          '  P.ID_Conta,'
           '  SUM(Valor) ValorParcela, '
           '  DataPagamento Pagamento, '
           '  SUM(ValorPago) ValorPago,'
