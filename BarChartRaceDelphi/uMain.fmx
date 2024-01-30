@@ -1,0 +1,248 @@
+object frmMain: TfrmMain
+  Left = 0
+  Top = 0
+  Caption = 'Delphi BarChartRacer'
+  ClientHeight = 535
+  ClientWidth = 929
+  Fill.Kind = Solid
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object Rectangle2: TRectangle
+    Fill.Color = claWhite
+    Position.X = 25.000000000000000000
+    Position.Y = 28.000000000000000000
+    Size.Width = 553.000000000000000000
+    Size.Height = 473.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Color = claWhite
+    XRadius = 15.000000000000000000
+    YRadius = 15.000000000000000000
+    object vsbBarCharRacer: TVertScrollBox
+      Position.X = 7.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 537.000000000000000000
+      Size.Height = 458.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      ShowScrollBars = False
+      Viewport.Width = 537.000000000000000000
+      Viewport.Height = 458.000000000000000000
+    end
+    object ShadowEffect1: TShadowEffect
+      Distance = 3.000000000000000000
+      Direction = 45.000000000000000000
+      Softness = 0.300000011920929000
+      Opacity = 0.300000011920929000
+      ShadowColor = claBlack
+    end
+  end
+  object Rectangle3: TRectangle
+    Fill.Color = claWhite
+    Padding.Left = 20.000000000000000000
+    Padding.Right = 20.000000000000000000
+    Position.X = 601.000000000000000000
+    Position.Y = 28.000000000000000000
+    Size.Width = 296.000000000000000000
+    Size.Height = 473.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Color = claWhite
+    XRadius = 15.000000000000000000
+    YRadius = 15.000000000000000000
+    object ShadowEffect2: TShadowEffect
+      Distance = 3.000000000000000000
+      Direction = 45.000000000000000000
+      Softness = 0.300000011920929000
+      Opacity = 0.300000011920929000
+      ShadowColor = claBlack
+    end
+    object lblY: TLabel
+      Align = Top
+      Margins.Top = 10.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 70.000000000000000000
+      Size.Width = 256.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Eixo Y:'
+      TabOrder = 12
+    end
+    object cmbFieldName: TComboBox
+      Position.X = 32.000000000000000000
+      Position.Y = 157.000000000000000000
+      StyleLookup = 'transparentedit'
+      TabOrder = 6
+    end
+    object lblAnimationSpeed: TLabel
+      Align = Top
+      Margins.Top = 10.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 357.000000000000000000
+      Size.Width = 256.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Animation Speed: 0.6'
+      TabOrder = 9
+    end
+    object tbrAnimationSpeed: TTrackBar
+      Align = Top
+      CanParentFocus = True
+      Frequency = 0.100000001490116100
+      Max = 1.000000000000000000
+      Min = 0.100000001490116100
+      Orientation = Horizontal
+      Position.X = 20.000000000000000000
+      Position.Y = 374.000000000000000000
+      Size.Width = 256.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 14
+      Value = 0.600000023841857900
+    end
+    object btnStart: TButton
+      Align = Bottom
+      Margins.Bottom = 20.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 413.000000000000000000
+      Size.Width = 256.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      Text = 'Start'
+      OnClick = btnStartClick
+    end
+    object lblX: TLabel
+      Align = Top
+      Margins.Top = 10.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 135.000000000000000000
+      Size.Width = 256.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Eixo X:'
+      TabOrder = 4
+    end
+    object flowName: TFlowLayout
+      Align = Top
+      Position.X = 20.000000000000000000
+      Position.Y = 87.000000000000000000
+      Size.Width = 256.000000000000000000
+      Size.Height = 38.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 18
+      Justify = Left
+      JustifyLastLine = Left
+      FlowDirection = LeftToRight
+    end
+    object flowValue: TFlowLayout
+      Align = Top
+      Position.X = 20.000000000000000000
+      Position.Y = 152.000000000000000000
+      Size.Width = 256.000000000000000000
+      Size.Height = 47.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 17
+      Justify = Left
+      JustifyLastLine = Left
+      FlowDirection = LeftToRight
+    end
+    object flowFormat: TFlowLayout
+      Align = Top
+      Position.X = 20.000000000000000000
+      Position.Y = 226.000000000000000000
+      Size.Width = 256.000000000000000000
+      Size.Height = 47.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 16
+      Justify = Left
+      JustifyLastLine = Left
+      FlowDirection = LeftToRight
+    end
+    object lblTitle: TLabel
+      Align = Top
+      Margins.Top = 10.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 10.000000000000000000
+      Size.Width = 256.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Title '
+      TabOrder = 11
+    end
+    object edtTitle: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Top
+      StyleLookup = 'transparentedit'
+      TabOrder = 19
+      Text = 'Delphi BarChartRacer'
+      TextSettings.Font.Size = 16.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 27.000000000000000000
+      Size.Width = 256.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      StyledSettings = [Family, Style, FontColor]
+      object Line1: TLine
+        Align = Bottom
+        LineType = Top
+        Position.Y = 32.000000000000000000
+        Size.Width = 256.000000000000000000
+        Size.Height = 1.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Color = claSteelblue
+      end
+    end
+    object lblFormat: TLabel
+      Align = Top
+      Margins.Top = 10.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 209.000000000000000000
+      Size.Width = 256.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Format Values'
+      TabOrder = 8
+    end
+    object flowDateFormat: TFlowLayout
+      Align = Top
+      Position.X = 20.000000000000000000
+      Position.Y = 300.000000000000000000
+      Size.Width = 256.000000000000000000
+      Size.Height = 47.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 15
+      Justify = Left
+      JustifyLastLine = Left
+      FlowDirection = LeftToRight
+    end
+    object Label1: TLabel
+      Align = Top
+      Margins.Top = 10.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 283.000000000000000000
+      Size.Width = 256.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Format Date'
+      TabOrder = 7
+    end
+  end
+  object FDConnection: TFDConnection
+    Params.Strings = (
+      'Database=C:\Git\Projetos\BarChartRaceDelphi\Vendas.sdb'
+      'DriverID=SQLite')
+    LoginPrompt = False
+    Left = 728
+    Top = 40
+  end
+  object tabQuery: TFDQuery
+    Connection = FDConnection
+    SQL.Strings = (
+      'SELECT vendas.*, 1 as TOT '
+      '   FROM vendas Limit 200')
+    Left = 728
+    Top = 104
+  end
+end
