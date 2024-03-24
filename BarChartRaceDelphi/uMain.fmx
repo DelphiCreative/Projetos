@@ -5,6 +5,7 @@ object frmMain: TfrmMain
   ClientHeight = 535
   ClientWidth = 929
   Fill.Kind = Solid
+  Visible = True
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
@@ -100,6 +101,7 @@ object frmMain: TfrmMain
       Size.PlatformDefault = False
       TabOrder = 14
       Value = 0.600000023841857900
+      OnTracking = tbrAnimationSpeedTracking
     end
     object btnStart: TButton
       Align = Bottom

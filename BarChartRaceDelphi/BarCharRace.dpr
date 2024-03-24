@@ -11,6 +11,11 @@ uses
 
 begin
   Application.Initialize;
-  Application.CreateForm(TfrmMain, frmMain);
-  Application.Run;
+
+  if ParamCount = 0 then
+      Application.Terminate
+  else begin
+     Application.CreateForm(TfrmMain, frmMain);
+     Application.Run;
+  end;
 end.
