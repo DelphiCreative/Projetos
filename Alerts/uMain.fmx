@@ -1,0 +1,220 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'ALERTS'
+  ClientHeight = 617
+  ClientWidth = 411
+  Fill.Kind = Solid
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object Layout1: TLayout
+    Align = Client
+    Size.Width = 411.000000000000000000
+    Size.Height = 617.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object Rectangle1: TRectangle
+      Align = Bottom
+      Fill.Color = claDarkolivegreen
+      Margins.Left = 20.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 20.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 187.000000000000000000
+      Size.Width = 371.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Thickness = 0.000000000000000000
+      XRadius = 15.000000000000000000
+      YRadius = 15.000000000000000000
+      object SpeedButton1: TSpeedButton
+        Align = Contents
+        Size.Width = 371.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        OnClick = SpeedButton1Click
+      end
+      object ShadowEffect1: TShadowEffect
+        Distance = 2.000000000000000000
+        Direction = 90.000000000000000000
+        Softness = 0.200000002980232200
+        Opacity = 0.300000011920929000
+        ShadowColor = claBlack
+      end
+      object Text1: TText
+        Align = Center
+        AutoSize = True
+        HitTest = False
+        Size.Width = 96.008460998535160000
+        Size.Height = 18.621093750000000000
+        Size.PlatformDefault = False
+        Text = 'atSuccessToast'
+        TextSettings.Font.Size = 14.000000000000000000
+        TextSettings.FontColor = claWhite
+      end
+    end
+    object Rectangle2: TRectangle
+      Align = Bottom
+      Fill.Color = claDarkolivegreen
+      Margins.Left = 20.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 20.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 247.000000000000000000
+      Size.Width = 371.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Thickness = 0.000000000000000000
+      XRadius = 15.000000000000000000
+      YRadius = 15.000000000000000000
+      object SpeedButton2: TSpeedButton
+        Align = Contents
+        Size.Width = 371.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        OnClick = SpeedButton2Click
+      end
+      object ShadowEffect2: TShadowEffect
+        Distance = 2.000000000000000000
+        Direction = 90.000000000000000000
+        Softness = 0.200000002980232200
+        Opacity = 0.300000011920929000
+        ShadowColor = claBlack
+      end
+      object Text2: TText
+        Align = Center
+        AutoSize = True
+        HitTest = False
+        Size.Width = 78.399085998535160000
+        Size.Height = 18.621093750000000000
+        Size.PlatformDefault = False
+        Text = 'atErrorToast'
+        TextSettings.Font.Size = 14.000000000000000000
+        TextSettings.FontColor = claWhite
+      end
+    end
+    object Rectangle3: TRectangle
+      Align = Bottom
+      Fill.Color = claDarkolivegreen
+      Margins.Left = 20.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 20.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 307.000000000000000000
+      Size.Width = 371.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Thickness = 0.000000000000000000
+      XRadius = 15.000000000000000000
+      YRadius = 15.000000000000000000
+      object SpeedButton3: TSpeedButton
+        Align = Contents
+        Size.Width = 371.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        OnClick = SpeedButton3Click
+      end
+      object ShadowEffect3: TShadowEffect
+        Distance = 2.000000000000000000
+        Direction = 90.000000000000000000
+        Softness = 0.200000002980232200
+        Opacity = 0.300000011920929000
+        ShadowColor = claBlack
+      end
+      object Text3: TText
+        Align = Center
+        AutoSize = True
+        HitTest = False
+        Size.Width = 94.490882873535160000
+        Size.Height = 18.621093750000000000
+        Size.PlatformDefault = False
+        Text = 'atBottomToast'
+        TextSettings.Font.Size = 14.000000000000000000
+        TextSettings.FontColor = claWhite
+      end
+    end
+    object Rectangle4: TRectangle
+      Align = Bottom
+      Fill.Color = claDarkolivegreen
+      Margins.Left = 20.000000000000000000
+      Margins.Top = 5.000000000000000000
+      Margins.Right = 20.000000000000000000
+      Margins.Bottom = 200.000000000000000000
+      Position.X = 20.000000000000000000
+      Position.Y = 367.000000000000000000
+      Size.Width = 371.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Thickness = 0.000000000000000000
+      XRadius = 15.000000000000000000
+      YRadius = 15.000000000000000000
+      object SpeedButton4: TSpeedButton
+        Align = Contents
+        Size.Width = 371.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        OnClick = SpeedButton4Click
+      end
+      object ShadowEffect4: TShadowEffect
+        Distance = 2.000000000000000000
+        Direction = 90.000000000000000000
+        Softness = 0.200000002980232200
+        Opacity = 0.300000011920929000
+        ShadowColor = claBlack
+      end
+      object Text4: TText
+        Align = Center
+        AutoSize = True
+        HitTest = False
+        Size.Width = 70.913734436035160000
+        Size.Height = 18.621093750000000000
+        Size.PlatformDefault = False
+        Text = 'atTopToast'
+        TextSettings.Font.Size = 14.000000000000000000
+        TextSettings.FontColor = claWhite
+      end
+    end
+    object Label1: TLabel
+      StyledSettings = [Family, Style, FontColor]
+      Position.X = 56.000000000000000000
+      Position.Y = 45.000000000000000000
+      TextSettings.Font.Size = 16.000000000000000000
+      Text = 'FontColor'
+      TabOrder = 5
+    end
+    object Label2: TLabel
+      StyledSettings = [Family, Style, FontColor]
+      Position.X = 56.000000000000000000
+      Position.Y = 88.000000000000000000
+      Size.Width = 120.000000000000000000
+      Size.Height = 28.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 16.000000000000000000
+      Text = 'BgColor'
+      TabOrder = 4
+    end
+    object ComboColorBox1: TComboColorBox
+      Color = claDimgray
+      Position.X = 208.000000000000000000
+      Position.Y = 37.000000000000000000
+      Size.Width = 145.000000000000000000
+      Size.Height = 36.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 7
+    end
+    object ComboColorBox2: TComboColorBox
+      Color = claWhite
+      Position.X = 208.000000000000000000
+      Position.Y = 84.000000000000000000
+      Size.Width = 145.000000000000000000
+      Size.Height = 36.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 6
+    end
+  end
+end
